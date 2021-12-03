@@ -3,8 +3,10 @@
 {% block title %}Welcome!{% endblock %}
 
 {% block body %}
-    <div class="button">
-      <button id="signup" type="submit">Créer un compte</button>
-      <button id="register" type="submit">Se connecter</button>
+  <body style="margin:0; padding:0;">
+    <div class="button" style="display: flex; flex-direction: column; min-height: calc(100vh - 10vh); align-items: center; justify-content: center; background-color: #30475E;">
+      <button id="signup" type="submit" style="height: 12rem; width: 70%; font-size: 4rem; margin-bottom: 3rem; border-radius: 100px; background-color: #E7DEC8; color: #30475E; border: solid #30475E; box-shadow: 2px 2px 10px #CBAF87 inset;">Créer un compte</button>
+      <button id="register" type="submit" style="height: 12rem; width: 70%; font-size: 4rem; margin-bottom: 10rem; border-radius: 100px; background-color: #E7DEC8; color: #30475E; border: solid #30475E; box-shadow: 2px 2px 10px #CBAF87 inset;">Se connecter</button>
     </div>
+  </body>
 {% endblock %} 
