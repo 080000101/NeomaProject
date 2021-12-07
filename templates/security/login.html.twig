@@ -13,8 +13,9 @@
             Vous êtes connecter avec {{ app.user.email }}, <a href="{{ path('app_logout') }}">Déconnexion</a>
         </div>
     {% endif %}
-
+    
     <h1 class="h3 mb-3 font-weight-normal">Connexion</h1>
+
     <label for="inputEmail">Email</label>
     <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
     <label for="inputPassword">Mot de passe</label>
@@ -36,7 +37,7 @@
     #}
 
     <button class="btn btn-lg btn-primary" type="submit">
-        Valider
+        Sign in
     </button>
 </form>
 {% endblock %}
