@@ -148,3 +148,12 @@ $navbar-height: 12vh;
 }
 
 /*---------------------------Registerpage------------------------------ */
+
+.register-background {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - $navbar-height);
+    justify-content: center;
+    align-items: center;
+    background-color: $main-color;
+}

@@ -5,13 +5,20 @@
 {% block body %}
     <div class="register-background">
 
-        {{ form_start(registrationForm) }}
-            {{ form_row(registrationForm.email) }}
-            {{ form_row(registrationForm.plainPassword, {
-                label: 'Password'
-            }) }}
+        <div class="register-form-container">
+
+            <div class="register-form">
+                {{ form_start(registrationForm) }}
+                    {{ form_row(registrationForm.email) }}
+                    {{ form_row(registrationForm.plainPassword, {
+                        label: 'Password'
+                    }) }}
+            </div>
+
+        </div>
+
         <button type="submit" class="btn">S'inscrire</button>
         {{ form_end(registrationForm) }}
-    
+
     </div>
 {% endblock %}
