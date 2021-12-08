@@ -3,13 +3,15 @@
 {% block title %}Créer un compte{% endblock %}
 
 {% block body %}
-    <h1>Inscription</h1>
+    <div class="register-background">
 
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-     <button type="submit" class="btn">S'inscrire</button>
-    {{ form_end(registrationForm) }}
+        {{ form_start(registrationForm) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
+            }) }}
+        <button type="submit" class="btn">S'inscrire</button>
+        {{ form_end(registrationForm) }}
+    
+    </div>
 {% endblock %}

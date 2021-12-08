@@ -52,6 +52,12 @@ class Contact
      */
     private $adress;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Account::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $account;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -139,5 +145,21 @@ class Contact
         $this->adress = $adress;
 
         return $this;
+    }
+
+    public function getAccount(): ?Account
+    {
+        return $this->account;
+    }
+
+    public function setAccount(?Account $account): self
+    {
+        $this->account = $account;
+
+        return $this;
+    }
+    public function __toString()
+    {
+        return $this->contact;
     }
 }
