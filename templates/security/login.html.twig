@@ -19,10 +19,14 @@
         <div class="login-form-container">
 
             <div class="login-form">
-                <label class="login-email" for="inputEmail">Email</label>
-                <input class="login-email-input" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-                <label class="login-password" for="inputPassword">Mot de passe</label>
-                <input class="login-password-input" type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                <div>
+                    <label class="login-email" for="inputEmail">Email</label>
+                    <input class="login-email-input" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+                </div>
+                <div>
+                    <label class="login-password" for="inputPassword">Mot de passe</label>
+                    <input class="login-password-input" type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                </div>
             </div>
             
         </div>

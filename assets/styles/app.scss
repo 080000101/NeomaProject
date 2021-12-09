@@ -97,7 +97,7 @@ $navbar-height: 12vh;
     color: $main-color;
     text-align: center;
     width: 70%;
-    height: 50%;
+    height: 40%;
     border-radius: 100px;
 }
 
@@ -156,4 +156,61 @@ $navbar-height: 12vh;
     justify-content: center;
     align-items: center;
     background-color: $main-color;
+}
+
+.register-form-container {
+    display: flex;
+    justify-content: center;
+    background-color: $secondary-color;
+    width: 70%;
+    height: 50%;
+    border-radius: 100px;
+    text-align: center;
+    color: $main-color;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+form[name="registration_form"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
+    padding-bottom: 2rem;
+}
+
+.required {
+    font-size: 3rem;
+}
+
+#registration_form_email {
+    height: 5rem;
+    width: 90%;
+    background-color: rgba(203, 175, 135, 0.5);
+    font-size: 2.5rem;
+    color: $main-color;
+}
+
+.password-field {
+    height: 5rem;
+    width: 90%;
+    background-color: rgba(203, 175, 135, 0.5);
+    font-size: 2.5rem;
+    color: $main-color;
+}
+
+.register-btn {
+    background-color: $secondary-color;
+    margin-top: 8rem;
+    width: 35%;
+    height: 10rem;
+    border-radius: 100%;
+    font-size: 3rem;
+    color: $main-color;
+    border: $secondary-color;
 }
