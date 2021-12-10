@@ -4,10 +4,13 @@
 
 {% block body %}
     <div class="new-background">
-        <h1>Créer un nouveau contact</h1>
 
         {{ include('contact/_form.html.twig') }}
 
-        <a href="{{ path('contact_index') }}">Retourne à la liste de contact</a>
+        <div class="two-btn">
+            <button class="save-btn">{{ button_label|default('Sauvergarder') }}</button>
+            <a class="return-btn"href="{{ path('contact_index') }}">Retour</a>
+        </div>
+        
     <div>
 {% endblock %}
