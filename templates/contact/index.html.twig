@@ -9,14 +9,14 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Phone_number</th>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Numéro de tel</th>
                 <th>Email</th>
-                <th>Country</th>
-                <th>City</th>
-                <th>Adress</th>
-                <th>actions</th>
+                <th>Pays</th>
+                <th>Ville</th>
+                <th>Adresse</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -31,8 +31,8 @@
                 <td>{{ contact.city }}</td>
                 <td>{{ contact.adress }}</td>
                 <td>
-                    <a href="{{ path('contact_show', {'id': contact.id}) }}">show</a>
-                    <a href="{{ path('contact_edit', {'id': contact.id}) }}">edit</a>
+                    <a href="{{ path('contact_show', {'id': contact.id}) }}">Afficher</a>
+                    <a href="{{ path('contact_edit', {'id': contact.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -43,5 +43,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('contact_new') }}">Create new</a>
+    <a href="{{ path('contact_new') }}">Créer un nouveau</a>
 {% endblock %}
