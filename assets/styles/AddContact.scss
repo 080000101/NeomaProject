@@ -1,0 +1,37 @@
+.new-background{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - $navbar-height);
+    justify-content: center;
+    align-items: center;
+    background-color: $main-color;
+}
+
+form[name="contact"] {
+    display: flex;
+    justify-content: center;
+    background-color: $secondary-color;
+    width: 70%;
+    height: 50%;
+    border-radius: 100px;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-evenly;
+    height: 100%;
+    color: $main-color;
+}
+
+.save-btn {
+    background-color: $secondary-color;
+    margin-top: 8rem;
+    width: 35%;
+    height: 10rem;
+    border-radius: 100%;
+    font-size: 2.5rem;
+    color: $main-color;
+    border: $secondary-color;
+}
