@@ -3,10 +3,8 @@
 {% block title %}Welcome!{% endblock %}
 
 {% block body %}
-  <body>
-    <div class="button">
-      <a href="register" id="signup">Créer un compte</a>
-      <a href="login" id="register">Se connecter</a>
-    </div>
-  </body>
+  <div class="button">
+    <a href=" {{path('app_register')}} " class="register" id="register">Créer un compte</a>
+    <a href=" {{path('app_login')}} " class="login" id="login">Se connecter</a>
+  </div>
 {% endblock %} 
