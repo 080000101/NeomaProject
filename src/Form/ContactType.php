@@ -6,6 +6,8 @@ use App\Entity\Contact;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 
 class ContactType extends AbstractType
 {
@@ -14,9 +16,11 @@ class ContactType extends AbstractType
         $builder
             ->add('firstname',)
             ->add('lastname')
-            ->add('phone_number')
+            ->add('phone_number', NumberType::class, [
+                'mapped' => false
+            ])
             ->add('email')
-            ->add('country')
+            ->add('country', CountryType::class)
             ->add('city')
             ->add('adress')
             ->add('account')
