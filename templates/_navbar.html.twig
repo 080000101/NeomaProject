@@ -4,8 +4,8 @@
 
         <ul class="nav-links">
             <li><img class="logo" src="{{ asset('build/images/logo.png') }}" alt="ACME logo"></li>
-            <li><a href=" {{path('home_index')}} ">Accueil</a></li>
-            <li><a class="projet" href=" {{path('program_index')}} ">Projet</a></li> 
+            <li><a href=" {{path('program_index')}} ">Projet</a></li> 
+            <li>{% if app.user %}<a class="deconnexion" href="{{ path('app_logout') }}">Déconnexion</a>{% endif %}</li>
         </ul>
 
     </div>
