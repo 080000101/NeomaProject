@@ -1,4 +1,10 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+    <div class="contact">
+        {{ form_widget(form) }}
+    </div>
+    <div class="two-btn">
+        <button class="save-btn">{{ button_label|default('Sauvergarder') }}</button>
+        <a class="return-btn"href="{{ path('contact_index') }}">Retour</a>
+    </div>
 {{ form_end(form) }}
 

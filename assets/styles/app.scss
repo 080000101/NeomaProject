@@ -205,20 +205,21 @@ form[name="registration_form"] {
 
 form[name="contact"] {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    background-color: $secondary-color;
     width: 70%;
     height: 77%;
-    border-radius: 100px;
     text-align: center;
 }
 
-#contact {
+.contact {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    background-color: $secondary-color;
+    border-radius: 100px;
     align-items: center;
-    height: 95%;
+    height: 100%;
     padding-top: 3rem;
     overflow-y: scroll;
     color: $main-color;
@@ -283,7 +284,7 @@ select[id="contact_account"] {
     height: calc(100vh - $navbar-height);
     justify-content: space-evenly;
     align-items: center;
-    background-color: $main-color;
+    background-color: $secondary-color;
 }
 
 .list-title {
@@ -305,6 +306,10 @@ select[id="contact_account"] {
     padding: 2rem;
     border-radius: 50px;
     color: $main-color;
+}
+
+h4 {
+    font-size: 3rem;
 }
 
 .infos {
