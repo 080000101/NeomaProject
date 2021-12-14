@@ -9,29 +9,87 @@
 
 form[name="contact"] {
     display: flex;
-    justify-content: center;
-    background-color: $secondary-color;
-    width: 70%;
-    height: 50%;
-    border-radius: 100px;
-}
-
-#contact {
-    display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 70%;
+    height: 77%;
+    text-align: center;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
+    background-color: $secondary-color;
+    border-radius: 100px;
+    align-items: center;
     height: 100%;
+    padding-top: 3rem;
+    overflow-y: scroll;
     color: $main-color;
+}
+
+label[for="contact_account"] {
+    display: none;
+}
+
+select[id="contact_account"] {
+    display: none;
+}
+
+#contact_country {
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem;
+    height: 5rem;
+    width: 90%;
+    background-color: rgba(203, 175, 135, 0.5);
+    font-size: 2.05rem;
+    color: $main-color;
+}
+
+.two-btn {
+    width: 70%;
+    display: flex;
+    margin-top: 5rem;
 }
 
 .save-btn {
     background-color: $secondary-color;
-    margin-top: 8rem;
-    width: 35%;
+    width: 70%;
     height: 10rem;
     border-radius: 100%;
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     color: $main-color;
     border: $secondary-color;
+    margin-right: 3rem;
+}
+
+.return-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $secondary-color;
+    width: 70%;
+    height: 10rem;
+    border-radius: 100%;
+    font-size: 3rem;
+    text-decoration: none;
+    color: $main-color;
+    border: $secondary-color;
+}
+
+label {
+    font-size: 3rem;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    margin-left: 2rem;
+    height: 5rem;
+    width: 90%;
+    background-color: rgba(203, 175, 135, 0.5);
+    font-size: 2.5rem;
+    color: $main-color;
 }
