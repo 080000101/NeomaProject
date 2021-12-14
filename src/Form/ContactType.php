@@ -16,9 +16,7 @@ class ContactType extends AbstractType
         $builder
             ->add('firstname',)
             ->add('lastname')
-            ->add('phone_number', NumberType::class, [
-                'mapped' => false
-            ])
+            ->add('phone_number', NumberType::class,)
             ->add('email')
             ->add('country', CountryType::class)
             ->add('city')

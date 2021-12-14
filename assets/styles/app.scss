@@ -259,7 +259,6 @@ select[id="contact_account"] {
     color: $main-color;
     border: $secondary-color;
     margin-right: 3rem;
-
 }
 
 .return-btn {
@@ -284,7 +283,7 @@ select[id="contact_account"] {
     height: calc(100vh - $navbar-height);
     justify-content: space-evenly;
     align-items: center;
-    background-color: $secondary-color;
+    background-color: $main-color;
 }
 
 .list-title {
@@ -298,30 +297,30 @@ select[id="contact_account"] {
 
 .infos-container {
     display: flex;
-    background-color: $secondary-color;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 85%;
-    height: 20%;
-    padding: 2rem;
+    height: 90%;
     border-radius: 50px;
-    color: $main-color;
-}
-
-h4 {
-    font-size: 3rem;
+    margin-top: 10rem;
 }
 
 .infos {
     display: flex;
+    flex-direction: column;
     background-color: $secondary-color;
     justify-content: center;
     align-items: center;
     width: 85%;
-    height: 20%;
-    padding: 2rem;
+    height: 35%;
     border-radius: 50px;
     color: $main-color;
+    margin-top: 3rem;
+}
+
+h4 {
+    font-size: 3rem;
 }
 
 .create-btn {
@@ -336,4 +335,17 @@ h4 {
     text-decoration: none;
     color: $main-color;
     border: $secondary-color;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Showcontact.scss~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.delete-btn {
+    background-color: $secondary-color;
+    width: 70%;
+    height: 10rem;
+    border-radius: 100%;
+    font-size: 2.7rem;
+    color: $main-color;
+    border: $secondary-color;
+    margin-right: 3rem;
 }
