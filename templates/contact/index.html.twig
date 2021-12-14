@@ -20,8 +20,8 @@
                     <h4>{{ contact.city }}</h4>
                     <h4>{{ contact.adress }}</h4>
                     <h4>
-                        <a href="{{ path('contact_show', {'id': contact.id}) }}">Afficher</a>
-                        <a href="{{ path('contact_edit', {'id': contact.id}) }}">Modifier</a>
+                        <a class="list-button" href="{{ path('contact_show', {'id': contact.id}) }}">Afficher</a>
+                        <a class="list-button" href="{{ path('contact_edit', {'id': contact.id}) }}">Modifier</a>
                     </h4>
                 </div>
             {% else %}
@@ -29,7 +29,7 @@
             {% endfor %}
         </div>
 
-        <a class="create-btn" href="{{ path('contact_new') }}">Ajouter</a>
+        <a class="create-btn" href="{{ path('contact_new') }}">+</a>
 
     </div>
 
