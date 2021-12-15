@@ -16,14 +16,21 @@ class ContactType extends AbstractType
         $builder
             ->add('firstname',)
             ->add('lastname')
-            ->add('phone_number', NumberType::class, [
-                'mapped' => false
+            ->add('phone_number', NumberType::class , [
+                    'scale' => 2,
+                    'attr'  => array(
+                    'min'  => 0,
+                    'max' => 999999999999,
+                    'step' => 0.01,
+                ),
             ])
             ->add('email')
-            ->add('country', CountryType::class)
+            ->add('country', CountryType::class, [
+                'placeholder' => 'France',
+                'mapped'      => false
+            ])
             ->add('city')
             ->add('adress')
-            ->add('account')
         ;
     }
 
