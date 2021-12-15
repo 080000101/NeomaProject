@@ -3,16 +3,8 @@
 {% block title %}Welcome!{% endblock %}
 
 {% block body %}
-  {# <div class="background">
-
-    <div class="home-picture"><img class="home-background-picture" src="{{ asset('build/images/home-background2.jpg') }}" alt="ACME background"></div>
-
-    <div class="home-logo"><img class="logo" src="{{ asset('build/images/logo.png') }}" alt="ACME logo"></div>
-
-    <div class="frame">
-      <a href=" {{path('app_register')}} " class="register" id="register">Créer un compte</a>
-      <a href=" {{path('app_login')}} " class="login" id="login">Se connecter</a>
-    </div>
-
-  </div> #}
+  <div class="button">
+    <a href=" {{path('app_register')}} " class="register" id="register">Créer un compte</a>
+    <a href=" {{path('app_login')}} " class="login" id="login">Se connecter</a>
+  </div>
 {% endblock %} 
