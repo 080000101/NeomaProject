@@ -3,8 +3,6 @@
 namespace App\Entity;
 
 use App\Repository\AccountRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -39,16 +37,6 @@ class Account implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string")
      */
     private $password;
-
-    /**
-     * @ORM\OneToMany(targetEntity=Contact::class, mappedBy="account")
-     */
-    private $account_id;
-
-    public function __construct()
-    {
-        $this->account_id = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -122,35 +110,5 @@ class Account implements UserInterface, PasswordAuthenticatedUserInterface
     public function __toString(): string
     {
         return $this->id;
-    }
-
-    /**
-     * @return Collection|Contact[]
-     */
-    public function getAccountId(): Collection
-    {
-        return $this->account_id;
-    }
-
-    public function addAccountId(Contact $accountId): self
-    {
-        if (!$this->account_id->contains($accountId)) {
-            $this->account_id[] = $accountId;
-            $accountId->setAccount($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAccountId(Contact $accountId): self
-    {
-        if ($this->account_id->removeElement($accountId)) {
-            // set the owning side to null (unless already changed)
-            if ($accountId->getAccount() === $this) {
-                $accountId->setAccount(null);
-            }
-        }
-
-        return $this;
     }
 }

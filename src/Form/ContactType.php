@@ -30,6 +30,7 @@ class ContactType extends AbstractType
             ])
             ->add('city')
             ->add('adress')
+            ->add('account', null, ['choice_label' => 'id'])
         ;
     }
 
