@@ -23,6 +23,7 @@ class ContactType extends AbstractType
                     'max' => 99999999999,
                 ),
             ])
+          
             ->add('email')
             ->add('country', CountryType::class, [
                 'placeholder' => 'Choisissez votre pays',

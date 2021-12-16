@@ -3,45 +3,34 @@
 {% block title %}Contact index{% endblock %}
 
 {% block body %}
-    <h1>Contact index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Prénom</th>
-                <th>Nom</th>
-                <th>Numéro de tel</th>
-                <th>Email</th>
-                <th>Pays</th>
-                <th>Ville</th>
-                <th>Adresse</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for contact in contacts %}
-            <tr>
-                <td>{{ contact.id }}</td>
-                <td>{{ contact.firstname }}</td>
-                <td>{{ contact.lastname }}</td>
-                <td>{{ contact.phoneNumber }}</td>
-                <td>{{ contact.email }}</td>
-                <td>{{ contact.country }}</td>
-                <td>{{ contact.city }}</td>
-                <td>{{ contact.adress }}</td>
-                <td>
-                    <a href="{{ path('contact_show', {'id': contact.id}) }}">Afficher</a>
-                    <a href="{{ path('contact_edit', {'id': contact.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <h1 class="list-title">Liste de contacts</h1>
 
-    <a href="{{ path('contact_new') }}">Créer un nouveau</a>
+    <div class="list-background">
+
+        <div class="infos-container">
+            {% for contact in contacts %}
+                <div class="infos">
+                    {# <h4>{{ contact.id }}</h4> #}
+                    <h4>{{ contact.firstname }}</h4>
+                    <h4>{{ contact.lastname }}</h4>
+                    <h4>{{ contact.phoneNumber }}</h4>
+                    <h4>{{ contact.email }}</h4>
+                    <h4>{{ contact.country }}</h4>
+                    <h4>{{ contact.city }}</h4>
+                    <h4>{{ contact.adress }}</h4>
+                    <h4>
+                        <a class="list-button" href="{{ path('contact_show', {'id': contact.id}) }}">Afficher</a>
+                        <a class="list-button" href="{{ path('contact_edit', {'id': contact.id}) }}">Modifier</a>
+                    </h4>
+                </div>
+            {% else %}
+                <h4>Ajoutez de nouveaux contacts</h4>
+            {% endfor %}
+        </div>
+
+        <a class="create-btn" href="{{ path('contact_new') }}">+</a>
+
+    </div>
+
 {% endblock %}
