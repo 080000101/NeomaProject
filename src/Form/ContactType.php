@@ -20,17 +20,17 @@ class ContactType extends AbstractType
                     'scale' => 2,
                     'attr'  => array(
                     'min'  => 0,
-                    'max' => 999999999999,
-                    'step' => 0.01,
+                    'max' => 99999999999,
                 ),
             ])
             ->add('email')
             ->add('country', CountryType::class, [
-                'placeholder' => 'France',
+                'placeholder' => 'Choisissez votre pays',
                 'mapped'      => false
             ])
             ->add('city')
             ->add('adress')
+            ->add('account')
         ;
     }
 
