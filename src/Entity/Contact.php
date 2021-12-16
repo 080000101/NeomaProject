@@ -53,8 +53,7 @@ class Contact
     private $adress;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Account::class)
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\ManyToOne(targetEntity=Account::class, inversedBy="account_id")
      */
     private $account;
 
