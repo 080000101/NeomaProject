@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
+use Symfony\Component\Form\Extension\Core\Type\TelType;
 
 class ContactType extends AbstractType
 {
@@ -16,13 +17,7 @@ class ContactType extends AbstractType
         $builder
             ->add('firstname',)
             ->add('lastname')
-            ->add('phone_number', NumberType::class , [
-                    'scale' => 2,
-                    'attr'  => array(
-                    'min'  => 0,
-                    'max' => 99999999999,
-                ),
-            ])
+            ->add('phone_number', TelType::class)
             ->add('email')
             ->add('country', CountryType::class, [
                 'placeholder' => 'Choisissez votre pays',
@@ -30,7 +25,6 @@ class ContactType extends AbstractType
             ])
             ->add('city')
             ->add('adress')
-            ->add('account', null, ['choice_label' => 'id'])
         ;
     }
 
