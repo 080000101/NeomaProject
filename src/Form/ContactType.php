@@ -17,7 +17,6 @@ class ContactType extends AbstractType
         $builder
             ->add('firstname',)
             ->add('lastname')
-            ->add('phone_number', TelType::class)
             ->add('email')
             ->add('country', CountryType::class, [
                 'placeholder' => 'Choisissez votre pays',
