@@ -1,64 +1,127 @@
 .login-background {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - $navbar-height);
     justify-content: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, rgb(48, 71, 94) 0%, rgb(126, 138, 151) 100%);
+}
+
+.login-form-background {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    background-color: $main-color;
 }
 
 .login-form-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    background-color: $secondary-color;
-    color: $main-color;
-    text-align: center;
-    width: 70%;
-    height: 40%;
-    border-radius: 100px;
+}
+
+.logo-login {
+    height: 30rem;
+    margin-bottom: 5rem;
+    margin-left: 1rem;
 }
 
 .login-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
-    padding-bottom: 6rem;
-    padding-top: 4rem;
+    width: 70%;
 }
 
-.login-email {
+.mobile-input {
+    height: 10rem;
+    width: 100%;
+    background-color: transparent;
+    border: 5px solid $secondary-color;
+    border-radius: 20px;
+    margin-bottom: 5rem;
     font-size: 3rem;
-}
-
-.login-email-input {
-    height: 5rem;
-    width: 90%;
-    background-color: rgba(203, 175, 135, 0.5);
-    font-size: 2.5rem;
-    color: $main-color;
-}
-
-.login-password {
-    font-size: 3rem;
-}
-
-.login-password-input {
-    height: 5rem;
-    width: 90%;
-    background-color: rgba(203, 175, 135, 0.5);
-    font-size: 2.5rem;
-    color: $main-color;
+    padding-left: 8rem;
+    color: $secondary-color;
+    overflow-x: scroll;
 }
 
 .login-btn {
-    background-color: $secondary-color;
-    margin-top: 8rem;
-    width: 35%;
     height: 10rem;
-    border-radius: 100%;
-    font-size: 2.5rem;
-    color: $main-color;
-    border: $secondary-color;
+    width: 25rem;
+    background-color: transparent;
+    border: 5px solid $secondary-color;
+    border-radius: 100px;
+    font-size: 3.2rem;
+    color: $secondary-color;
+}
+
+.login-title {
+    display: none;
+}
+
+.wave-login {
+    display: none;
+}
+
+.pc-input {
+    display: none;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+@media screen and (min-width: 1100px) {
+    .login-background {
+        background: whitesmoke;
+        justify-content: space-between;
+        overflow-x: hidden;
+    }
+    .logo-login {
+        display: none;
+    }
+    .mobile-input {
+        display: none;
+    }
+    .login-btn {
+        height: 6rem;
+        width: 15rem;
+        border: 5px solid $main-color;
+        color: $main-color;
+        font-size: 2rem;
+    }
+    .login-form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: $secondary-color;
+        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+        height: 70%;
+        justify-content: center;
+        position: fixed;
+        top: 10rem;
+        border-radius: 20px;
+    }
+    .login-title {
+        display: block;
+        white-space: pre;
+        position: fixed;
+        top: 2rem;
+        left: 2rem;
+        z-index: 1;
+        color: $secondary-color;
+        font-size: 3rem;
+    }
+    .wave-login {
+        display: block;
+    }
+    .pc-input {
+        display: block;
+        height: 6rem;
+        width: 100%;
+        background-color: transparent;
+        border: 5px solid $main-color;
+        border-radius: 20px;
+        margin-bottom: 2.5rem;
+        font-size: 2rem;
+        padding-left: 5.5rem;
+        color: $main-color;
+        overflow-x: scroll;
+    }
 }

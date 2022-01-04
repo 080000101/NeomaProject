@@ -14,41 +14,63 @@
         </div>
     {% endif %}
 
-    <div class="login-background">
+    <h1 class="login-title">Ravi de vous revoir,
+Connectez-vous !</h1>
     
-        <div class="login-form-container">
+    <div class="login-background">
 
-            <div class="login-form">
-                <div>
-                    <label class="login-email" for="inputEmail">Email</label>
-                    <input class="login-email-input" type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        <img class="wave-login" src="{{ asset('build/images/wave.png') }}" alt="ACME wave login">
+
+        <div class="login-form-background">
+            <img class="logo-login" src="{{ asset('build/images/logo-login.png') }}" alt="ACME logo login">
+
+            <div class="login-form-container">
+
+                <div class="login-form">
+                    <div>
+                        <input class="mobile-input" type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="nom d'utilisateur"
+                        style="background-image: url('{{ asset('build/images/profil-beige.png') }}'); background-repeat: no-repeat; background-size: 4rem; background-position: left 2rem center;" 
+                        autocomplete="email" required autofocus>
+                    </div>
+                    <div>
+                        <input class="mobile-input" type="password" name="password" id="inputPassword" placeholder="************"
+                        style="background-image: url('{{ asset('build/images/password-beige.png') }}'); background-repeat: no-repeat; background-size: 3.5rem; background-position: left 2.4rem center;" 
+                        autocomplete="current-password" required>
+                    </div>
+
+                    <div>
+                        <input class="pc-input" type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="nom d'utilisateur"
+                        style="background-image: url('{{ asset('build/images/profil-bleu.png') }}'); background-repeat: no-repeat; background-size: 3rem; background-position: left 1rem center;" 
+                        autocomplete="email" required autofocus>
+                    </div>
+                    <div>
+                        <input class="pc-input" type="password" name="password" id="inputPassword" placeholder="************"
+                        style="background-image: url('{{ asset('build/images/password-bleu.png') }}'); background-repeat: no-repeat; background-size: 3rem; background-position: left 1rem center;" 
+                        autocomplete="current-password" required>
+                    </div>
                 </div>
-                <div>
-                    <label class="login-password" for="inputPassword">Mot de passe</label>
-                    <input class="login-password-input" type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+                
+
+                <input type="hidden" name="_csrf_token"
+                    value="{{ csrf_token('authenticate') }}"
+                >
+
+                {#
+                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                    See https://symfony.com/doc/current/security/remember_me.html
+
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" name="_remember_me"> Remember me
+                    </label>
                 </div>
+                #}
+
+                <button class="login-btn" type="submit">
+                    Se connecter
+                </button>
             </div>
-            
         </div>
-
-        <input type="hidden" name="_csrf_token"
-            value="{{ csrf_token('authenticate') }}"
-        >
-
-        {#
-            Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-            See https://symfony.com/doc/current/security/remember_me.html
-
-            <div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" name="_remember_me"> Remember me
-                </label>
-            </div>
-        #}
-
-        <button class="login-btn" type="submit">
-            Se connecter
-        </button>
 
     </div>
 
