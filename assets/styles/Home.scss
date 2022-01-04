@@ -4,6 +4,10 @@
     height: 100vh;
 }
 
+.home-picture {
+    display: block;
+}
+
 .div-logo {
     top: 10rem;
     position: fixed;
@@ -23,9 +27,13 @@
     align-items: center;
 }
 
-.home-title{
+.mobile-title{
     color: $third-color;
     font-size: 6.5rem;
+}
+
+.pc-title {
+    display: none;
 }
 
 .button {
@@ -52,23 +60,40 @@
     margin-bottom: 4rem;
 }
 
-.home-text {
+.mobile-text {
     color: $third-color;
     font-size: 3.3rem;
     margin-top: -130px;
+}
+
+.pc-text{
+    display: none;
+}
+
+.pc-background {
+    display: none;
 }
 
 @media (prefers-color-scheme: dark) {
     .background {
         background-color: $main-color;
     }
+    .register, .login {
+        background: rgba(126, 138, 151, 0.5);
+    }
 }
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query Tablette~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query Tablette~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query Tablette~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
 
 @media screen and (min-width: 700px) and (max-width: 1100px) {
     .div-logo {
         top: 5rem;
     }
-    .home-title{
+    .mobile-title{
         font-size: 5rem;
     }
     .register, .login {
@@ -77,7 +102,145 @@
         font-size: 3rem;
         margin-bottom: 2rem;
     }
-    .home-text {
+    .mobile-text {
         margin-top: 0px;
     }
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+@media screen and (min-width: 1100px) and (max-width: 1350px) {
+    .background {
+        flex-direction: row;
+        overflow-x: hidden;
+    }
+    .home-picture {
+        display: none;
+    }
+    .mobile-title {
+        display: none;
+    }
+    .mobile-text {
+        display: none;
+    }
+    .pc-background {
+        display: block;
+    }
+    .pc-title {
+        display: block;
+        color: $third-color;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .pc-text {
+        display: block;
+        color: $third-color;
+        font-size: 1.5rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .home-body {
+        align-items: flex-start;
+    }
+    .button {
+        align-items: flex-start;
+        margin-left: 1rem;
+    }
+    .register, .login {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+        height: 4.5rem;
+        width: 90%;
+    }
+    .div-home-body {
+        display: flex;
+        align-items: flex-end;
+    }
+    .div-home-body-logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .div-logo {
+        top: 1rem;
+        position: relative;
+        left: 1rem;
+        margin-left: 0;
+    }
+    .logo {
+        width: 6rem;
+    }    
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query Grand PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@media screen and (min-width: 1350px) {
+    .background {
+        flex-direction: row;
+        overflow-x: hidden;
+    }
+    .home-picture {
+        display: none;
+    }
+    .mobile-title {
+        display: none;
+    }
+    .mobile-text {
+        display: none;
+    }
+    .pc-background {
+        display: block;
+    }
+    .pc-title {
+        display: block;
+        color: $third-color;
+        white-space: pre;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        font-size: 4rem;
+    }
+    .pc-text {
+        display: block;
+        color: $third-color;
+        white-space: pre;
+        font-size: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .home-body {
+        align-items: flex-start;
+        height: 70vh;
+    }
+    .button {
+        align-items: flex-start;
+        margin-left: 1rem;
+    }
+    .register, .login {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        height: 4.3rem;
+        width: 60%;
+    }
+    .div-home-body {
+        display: flex;
+        align-items: flex-end;
+    }
+    .div-home-body-logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .div-logo {
+        top: 1rem;
+        position: relative;
+        left: 1rem;
+        margin-left: 0;
+    }
+    .logo {
+        width: 6rem;
+    }    
 }
