@@ -31,6 +31,9 @@
 
         <a class="create-btn" href="{{ path('contact_new') }}">+</a>
 
+        {% if app.user %}<a class="deconnexion" href="{{ path('app_logout') }}">Déconnexion</a>{% endif %}
+
+
     </div>
 
 {% endblock %}

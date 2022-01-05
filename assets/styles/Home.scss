@@ -74,6 +74,10 @@
     display: none;
 }
 
+a:hover {
+    color: $secondary-color;
+}
+
 @media (prefers-color-scheme: dark) {
     .background {
         background-color: $main-color;
