@@ -3,45 +3,35 @@
 {% block title %}Contact index{% endblock %}
 
 {% block body %}
-    <h1>Contact index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Prénom</th>
-                <th>Nom</th>
-                <th>Numéro de tel</th>
-                <th>Email</th>
-                <th>Pays</th>
-                <th>Ville</th>
-                <th>Adresse</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for contact in contacts %}
-            <tr>
-                <td>{{ contact.id }}</td>
-                <td>{{ contact.firstname }}</td>
-                <td>{{ contact.lastname }}</td>
-                <td>{{ contact.phoneNumber }}</td>
-                <td>{{ contact.email }}</td>
-                <td>{{ contact.country }}</td>
-                <td>{{ contact.city }}</td>
-                <td>{{ contact.adress }}</td>
-                <td>
-                    <a href="{{ path('contact_show', {'id': contact.id}) }}">Afficher</a>
-                    <a href="{{ path('contact_edit', {'id': contact.id}) }}">Modifier</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="list-background">
 
-    <a href="{{ path('contact_new') }}">Créer un nouveau</a>
+        <div class="infos-container">
+            {% for contact in contacts %}
+                <div class="infos">
+                    {# <h4>{{ contact.id }}</h4> #}
+                    <div class="h4">
+                        <h4 class="name">{{ contact.firstname }} {{ contact.lastname }}</h4>
+                        <h4 class="phone-number"><img class="call-logo" src="{{ asset('build/images/call-logo.png') }}" alt="ACME call logo">{{ contact.phoneNumber }}</h4>
+                        <h4 class="email"><img class="mail-logo" src="{{ asset('build/images/mail-logo.png') }}" alt="ACME mail logo">{{ contact.email }}</h4>
+                    </div>
+                        {# <h4>{{ contact.adress }}</h4>
+                        <h4>{{ contact.city }} {{ contact.country }}</h4> #}
+                    <div class="actions-btn">
+                        <a href="{{ path('contact_show', {'id': contact.id}) }}"><img class="show-logo" src="{{ asset('build/images/show-logo.png') }}" alt="ACME show logo"></a>
+                        <a href="{{ path('contact_edit', {'id': contact.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
+                    </div>
+                </div>
+            {% else %}
+                <h4>Ajoutez de nouveaux contacts</h4>
+            {% endfor %}
+        </div>
+
+        <a class="create-btn" href="{{ path('contact_new') }}">+</a>
+
+        {% if app.user %}<a class="deconnexion" href="{{ path('app_logout') }}">Déconnexion</a>{% endif %}
+
+
+    </div>
+
 {% endblock %}

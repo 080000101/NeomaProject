@@ -3,8 +3,38 @@
 {% block title %}Welcome!{% endblock %}
 
 {% block body %}
-  <div class="button">
-    <a href=" {{path('app_register')}} " class="register" id="register">Créer un compte</a>
-    <a href=" {{path('app_login')}} " class="login" id="login">Se connecter</a>
+  <div class="background">
+
+    <img class="home-picture" src="{{ asset('build/images/background-mobile.png') }}" alt="ACME mobile background">
+    <img class="pc-background" src="{{ asset('build/images/pc-background.jpg') }}" alt="ACME pc background">
+
+    <div class="div-home-body-logo">
+
+      <div class="div-logo">
+        <img class="logo" src="{{ asset('build/images/E-contact.png') }}" alt="ACME logo">
+      </div>
+
+      <div class="div-home-body">
+
+        <div class="home-body">
+          <h1 class="mobile-title">Bienvenue</h1>
+          <h1 class="pc-title">Bienvenue sur
+E-contact</h1>
+
+          <p class="pc-text">Enregistrer facilement vos contacts en
+ligne grâce à e-contact !</p>
+
+          <div class="button">
+            <a href=" {{path('app_register')}} " class="register" id="register">Créer un compte</a>
+            <a href=" {{path('app_login')}} " class="login" id="login">Se connecter</a>
+          </div>
+
+          <p class="mobile-text">Enregistrer vos contacts en ligne</p>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 {% endblock %} 

@@ -3,11 +3,20 @@
 {% block title %}Edit Contact{% endblock %}
 
 {% block body %}
-    <h1>Edit Contact</h1>
 
-    {{ include('contact/_form.html.twig', {'button_label': 'Update'}) }}
+    <h1 class="edit-title">Modifier un contact</h1>
+    
+    <div class="edit-background">
 
-    <a href="{{ path('contact_index') }}">back to list</a>
+        <div class="edit-container">
 
-    {{ include('contact/_delete_form.html.twig') }}
+            {{ include('contact/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+
+            <a class="return-btn"href="{{ path('contact_index') }}">Retour</a>
+            
+            {{ include('contact/_delete_form.html.twig') }} 
+
+        </div>
+
+    </div>
 {% endblock %}

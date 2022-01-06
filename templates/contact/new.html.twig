@@ -3,9 +3,18 @@
 {% block title %}Ajouter un Contact{% endblock %}
 
 {% block body %}
-    <h1>Créer un nouveau contact</h1>
+    <div class="new-background">
 
-    {{ include('contact/_form.html.twig') }}
+        <div class="new-container">
 
-    <a href="{{ path('contact_index') }}">Retourne à la liste de contact</a>
+            <h1 class="new-title">Ajoutez un nouveau contact</h1>
+
+            <div class="new-form">
+                {{ include('contact/_form.html.twig') }}
+            </div>
+
+            <a class="return-btn"href="{{ path('contact_index') }}">Retour</a>
+        </div>
+
+    </div>
 {% endblock %}

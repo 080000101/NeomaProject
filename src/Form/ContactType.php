@@ -12,8 +12,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
 
-
-
 class ContactType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
@@ -32,6 +30,7 @@ class ContactType extends AbstractType
                         'placeholder' => '0654378965']
             ],)
             ->add('email', EmailType::class,
+
             ['attr' => ['class' => 'test',
                         'placeholder' => 'mariedupont@gmail.com']
             ],)

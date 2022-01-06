@@ -1,0 +1,131 @@
+label {
+    display: none;
+}
+
+.register-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, rgb(48, 71, 94) 0%, rgb(126, 138, 151) 100%);   
+}
+
+.register-form-background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+.logo-register {
+    height: 30rem;
+    margin-bottom: 5rem;
+}
+
+.register-form {
+    width: 80%;
+}
+
+#registration_form_email {
+    height: 10rem;
+    width: 100%;
+    background-color: transparent;
+    border: 5px solid $secondary-color;
+    border-radius: 20px;
+    margin-bottom: 5rem;
+    font-size: 3rem;
+    padding-left: 7rem;
+    color: $secondary-color;
+    overflow-x: scroll;
+}
+
+.password-field {
+    height: 10rem;
+    width: 100%;
+    background-color: transparent;
+    border: 5px solid $secondary-color;
+    border-radius: 20px;
+    margin-bottom: 5rem;
+    font-size: 3rem;
+    padding-left: 7rem;
+    color: $secondary-color;
+    overflow-x: scroll;
+}
+
+.register-btn {
+    height: 10rem;
+    width: 25rem;
+    background-color: transparent;
+    border: 5px solid $secondary-color;
+    border-radius: 100px;
+    font-size: 3.2rem;
+    color: $secondary-color;
+}
+
+.register-title {
+    display: none;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+@media screen and (min-width: 1100px) {
+    .register-background {
+        justify-content: space-between;
+        overflow-x: hidden;
+        background: $fourth-color;
+    }
+    .logo-register {
+        display: none;
+    }
+    .register-form-background {
+        justify-content: center;
+        height: 100%;
+    }
+    .register-form-container {
+        background: linear-gradient(45deg, rgba(203,175,135,1) 0%, rgba(231,222,200,1) 100%);
+        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+        height: 80%;
+        width: 35rem;
+        justify-content: center;
+        border-radius: 20px;
+    }
+    .register-btn {
+        height: 5rem;
+        width: 15rem;
+        font-size: 1.5rem;
+        border: 2px solid $main-color;
+        color: $main-color;
+    }
+    #registration_form_email {
+        height: 5rem;
+        margin-bottom: 2.5rem;
+        font-size: 1.5rem;
+        padding-left: 6.5rem;
+        border: 2px solid $main-color;
+        color: $main-color;
+    }
+    .password-field {
+        height: 5rem;
+        margin-bottom: 2.5rem;
+        font-size: 1.5rem;
+        padding-left: 6.5rem;
+        border: 2px solid $main-color;
+        color: $main-color;
+    }
+    .register-title {
+        display: block;
+        white-space: pre;
+        color: $main-color;
+        font-size: 2rem;
+        position: relative;
+        margin-bottom: 4rem;
+        padding-right: 80px;
+    }
+}
