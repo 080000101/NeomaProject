@@ -8,12 +8,14 @@
     
     <div class="edit-background">
 
-        {{ include('contact/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+        <div class="edit-container">
 
-        {# <a href="{{ path('contact_index') }}">Retour</a> #}
-        
-        <div class="parent-delete-btn">
+            {{ include('contact/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+
+            <a class="return-btn"href="{{ path('contact_index') }}">Retour</a>
+            
             {{ include('contact/_delete_form.html.twig') }} 
+
         </div>
 
     </div>

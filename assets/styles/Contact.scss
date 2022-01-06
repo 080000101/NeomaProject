@@ -4,173 +4,151 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $main-color;
-}
-
-.list-title {
-    background-color: $main-color;
-    color: $secondary-color;
-    font-size: 4.5rem;
-    text-align: center;
-    padding-top: 2.5rem;
-    margin: 0;
+    background-color: $third-color;
+    height: 100vh;
 }
 
 .infos-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 85%;
-    height: 90%;
+    width: 100%;
     margin-top: 3rem;
-
 }
 
 .infos {
     display: flex;
-    flex-direction: column;
-    background-color: $secondary-color;
-    justify-content: center;
-    align-items: center;
-    width: 85%;
-    border-radius: 100px;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: whitesmoke;
+    width: 40rem;
+    border-radius: 10px;
     color: $main-color;
-    margin-top: 3rem;
-    padding: 1rem;
+    margin-top: 2rem;
+    padding: 1.5rem;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
-h4 {
+.name {
     font-size: 2.5rem;
+}
+
+.phone-number {
+    padding-top: 2rem;
+}
+
+.phone-number, .email {
+    font-size: 1.8rem;
+}
+
+.show-logo {
+    height: 4rem;
+}
+
+.edit-logo {
+    height: 2.5rem;
+}
+
+.call-logo, .mail-logo {
+    height: 2.5rem;
 }
 
 .create-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $third-color;
+    background-color: $main-color;
     width: 17%;
     height: 10rem;
     border-radius: 100%;
     font-size: 5rem;
     text-decoration: none;
-    color: $main-color;
+    color: whitesmoke;
     border: $third-color;
     position: sticky;
     bottom: 2rem;
+    margin-top: 2rem;
 }
 
-.list-button {
-    display: inline-block;
-    flex-direction: column;
-    height: 5rem;
-    width: 15rem;
-    margin: 2rem;
-    margin-bottom: 0;
-    background-color: $third-color;
+.deconnexion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    width: 25rem;
+    background-color: transparent;
+    border: 5px solid $main-color;
     border-radius: 100px;
-    font-size: 3rem;
+    font-size: 3.2rem;
     text-decoration: none;
     color: $main-color;
-    text-align: center;
-    padding-top: 0.5rem;
+    margin-top: 5rem;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~AddContact.scss~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-.new-background{
+.new-background {
     display: flex;
     flex-direction: column;
-    height: calc(100vh - $navbar-height);
     justify-content: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, rgb(48, 71, 94) 0%, rgb(126, 138, 151) 100%);
+}
+
+.new-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    background-color: $main-color;
 }
 
-form[name="contact"] {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 70%;
-    height: 77%;
-    text-align: center;
+.new-form {
+    width: 80%;
 }
 
-.contact {
-    display: flex;
-    flex-direction: column;
-    background-color: $secondary-color;
-    border-radius: 100px;
-    align-items: center;
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-    color: $main-color;
-}
-
-label[for="contact_account"] {
-    display: none;
-}
-
-select[id="contact_account"] {
-    display: none;
-}
-
-#contact_country {
-    display: flex;
-    justify-content: center;
-    margin-left: 2rem;
-    height: 5rem;
-    width: 90%;
-    background-color: rgba(203, 175, 135, 0.5);
-    font-size: 2.05rem;
-    color: $main-color;
-}
-
-.two-btn {
+.test {
+    height: 10rem;
     width: 100%;
+    background-color: transparent;
+    border: 5px solid $secondary-color;
+    border-radius: 20px;
+    margin-bottom: 5rem;
+    font-size: 3rem;
+    padding-left: 5rem;
+    color: $secondary-color;
+    overflow-x: scroll;
+}
+
+.div-save-btn {
     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.save-btn, .return-btn, .delete-btn, .show-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10rem;
+    width: 25rem;
+    background-color: transparent;
+    border: 5px solid $secondary-color;
+    border-radius: 100px;
+    font-size: 3.2rem;
+    color: $secondary-color;
     margin-top: 5rem;
 }
 
-.save-btn {
-    background-color: $secondary-color;
-    width: 70%;
-    height: 10rem;
-    border-radius: 100%;
-    font-size: 2.7rem;
-    color: $main-color;
-    border: $secondary-color;
-    margin-right: 3rem;
-    padding: 1.5rem;
-}
-
-.return-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $secondary-color;
-    width: 70%;
-    height: 10rem;
-    border-radius: 100%;
-    font-size: 2.7rem;
+.return-btn, .delete-btn, .show-btn {
     text-decoration: none;
-    color: $main-color;
-    border: $secondary-color;
-    padding: 1.5rem;
+    margin-top: 2rem;
 }
 
-label {
-    font-size: 3rem;
+.new-title {
+    display: none;
 }
 
-input {
-    display: flex;
-    justify-content: center;
-    margin-left: 2rem;
-    height: 5rem;
-    width: 90%;
-    background-color: rgba(203, 175, 135, 0.5);
-    font-size: 2.5rem;
-    color: $main-color;
+#contact_account {
+    display: none;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~EditContact.scss~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -178,66 +156,59 @@ input {
 .edit-background {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(-45deg, rgb(48, 71, 94) 0%, rgb(126, 138, 151) 100%);
+}
+
+.edit-container {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    background-color: $main-color;
 }
 
 .edit-title {
-    background-color: $main-color;
-    color: $secondary-color;
-    font-size: 4.5rem;
-    text-align: center;
-    padding-top: 2.5rem;
-    margin: 0;
-    padding-bottom: 4rem;
-}
-
-.parent-delete-btn {
-    display: flex;
-    justify-content: center;
-}
-
-.delete-btn {
-    background-color: $secondary-color;
-    height: 10rem;
-    border-radius: 100%;
-    font-size: 2.7rem;
-    color: $main-color;
-    padding: 2.5rem;
-    margin-bottom: 3rem;
-    margin-top: 1.5rem;
+    display: none;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ShowContact.scss~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-.show-background{
+.show-background {
     display: flex;
     flex-direction: column;
-    height: 100%;
     justify-content: center;
-    align-items: center;
-    background-color: $main-color;
+    height: 100vh;
+    background: linear-gradient(-45deg, rgb(48, 71, 94) 0%, rgb(126, 138, 151) 100%);
 }
 
-.form-background {
-    background-color: $secondary-color;
-    height: 35vh;
+.show-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    border-radius: 50px;
+    align-items: center;
+}
+
+.show-form {
+    width: 80%;
 }
 
 .show-input {
-    text-align: center;
+    height: 10rem;
+    width: 100%;
+    background-color: transparent;
+    border: 5px solid $secondary-color;
+    border-radius: 20px;
+    margin-bottom: 5rem;
     font-size: 3rem;
+    padding-left: 5rem;
+    color: $secondary-color;
+    overflow-x: scroll;
 }
 
 .profil-logo {
     width: 40%;
     display: flex;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .profil-picture {
@@ -252,22 +223,57 @@ input {
     padding-top: 1rem;
 }
 
-.two-show-btn {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 10rem;
-}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
-.show-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: $secondary-color;
-    width: 30%;
-    height: 10rem;
-    border-radius: 100%;
-    font-size: 3rem;
-    text-decoration: none;
-    color: $main-color;
+@media screen and (min-width: 1100px) {
+    .list-background {
+        height: 100%;
+    }
+    .new-background, .edit-background, .show-background {
+        align-items: center;        
+        overflow-x: hidden;
+        background: $fourth-color;
+    }
+    .new-container, .edit-container, .show-container {
+        background: linear-gradient(45deg, rgba(203,175,135,1) 0%, rgba(231,222,200,1) 100%);
+        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+        height: 90%;
+        width: 35rem;
+        justify-content: center;
+        border-radius: 20px;
+    }
+    .save-btn, .return-btn, .delete-btn, .show-btn {
+        height: 4rem;
+        width: 15rem;
+        font-size: 1.5rem;
+        border: 2px solid $main-color;
+        color: $main-color;
+    }
+    .return-btn, .delete-btn, .show-btn {
+        margin-top: 1rem;
+    }
+    .show-input, .test {
+        height: 5rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        padding-left: 2rem;
+        border: 2px solid $main-color;
+        color: $main-color;
+    }
+    .show-title {
+        font-size: 3.5rem;
+        color: $main-color;
+        padding-bottom: 2rem;
+    }
+    .profil-logo {
+        margin-top: 0;
+    }
+    .profil-picture {
+        width: 50%;
+    }
+    .save-btn {
+        margin-top: 2rem;
+    }
 }
