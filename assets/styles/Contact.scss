@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     background-color: $third-color;
-    height: 100vh;
+    height: 100%;
 }
 
 .infos-container {
@@ -37,11 +37,11 @@
     padding-top: 2rem;
 }
 
-.phone-number, .email {
+.phone-number, .email, .adress, .location {
     font-size: 1.8rem;
 }
 
-.show-logo {
+.show-logo, .home-logo {
     height: 4rem;
 }
 
@@ -51,6 +51,11 @@
 
 .call-logo, .mail-logo {
     height: 2.5rem;
+}
+
+.location-logo {
+    height: 2rem;
+    padding-left: 1rem;
 }
 
 .create-btn {
@@ -83,6 +88,12 @@
     text-decoration: none;
     color: $main-color;
     margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.empty-title {
+    color: $main-color;
+    font-size: 3rem;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~AddContact.scss~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
@@ -91,7 +102,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(-45deg, rgb(48, 71, 94) 0%, rgb(126, 138, 151) 100%);
 }
 
@@ -102,11 +113,11 @@
 }
 
 .new-form {
-    width: 80%;
+    width: 70%;
 }
 
-.test {
-    height: 10rem;
+.test, .name-test {
+    height: 8rem;
     width: 100%;
     background-color: transparent;
     border: 5px solid $secondary-color;
@@ -116,6 +127,11 @@
     padding-left: 5rem;
     color: $secondary-color;
     overflow-x: scroll;
+}
+
+
+.name-test {
+    margin-top: 5rem;
 }
 
 .div-save-btn {
@@ -128,7 +144,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 10rem;
+    height: 8rem;
     width: 25rem;
     background-color: transparent;
     border: 5px solid $secondary-color;
@@ -141,6 +157,10 @@
 .return-btn, .delete-btn, .show-btn {
     text-decoration: none;
     margin-top: 2rem;
+}
+
+.return-btn {
+    margin-bottom: 5rem;
 }
 
 .new-title {
@@ -157,7 +177,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(-45deg, rgb(48, 71, 94) 0%, rgb(126, 138, 151) 100%);
 }
 
@@ -165,6 +185,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.edit-form {
+    width: 70%;
 }
 
 .edit-title {
@@ -177,7 +201,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 100vh;
+    height: 100%;
     background: linear-gradient(-45deg, rgb(48, 71, 94) 0%, rgb(126, 138, 151) 100%);
 }
 
@@ -243,6 +267,8 @@
         width: 35rem;
         justify-content: center;
         border-radius: 20px;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
     }
     .save-btn, .return-btn, .delete-btn, .show-btn {
         height: 4rem;
@@ -254,8 +280,8 @@
     .return-btn, .delete-btn, .show-btn {
         margin-top: 1rem;
     }
-    .show-input, .test {
-        height: 5rem;
+    .show-input, .test, .name-test {
+        height: 4rem;
         margin-bottom: 1.5rem;
         font-size: 1.5rem;
         padding-left: 2rem;
@@ -266,9 +292,6 @@
         font-size: 3.5rem;
         color: $main-color;
         padding-bottom: 2rem;
-    }
-    .profil-logo {
-        margin-top: 0;
     }
     .profil-picture {
         width: 50%;
