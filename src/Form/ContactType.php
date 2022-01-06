@@ -9,8 +9,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TelType;
-
 
 class ContactType extends AbstractType
 {
@@ -25,11 +25,12 @@ class ContactType extends AbstractType
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Dupont']
             ],)
-            ->add('phone_number', NumberType::class,
+            ->add('phone_number', TelType::class,
             ['attr' => ['class' => 'test',
                         'placeholder' => '0654378965']
             ],)
-            ->add('email', TextType::class,
+            ->add('email', EmailType::class,
+
             ['attr' => ['class' => 'test',
                         'placeholder' => 'mariedupont@gmail.com']
             ],)
