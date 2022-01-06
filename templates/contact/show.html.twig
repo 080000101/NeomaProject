@@ -5,44 +5,46 @@
 {% block body %}
 
     <div class="show-background">
+
+        <div class="show-container">
         
-        <div class="profil-logo">
-            <img class="profil-picture" src="{{ asset('build/images/profil-picture.png') }}" alt="ACME logo">
-        </div>
-
-        <h1 class="show-title">{{ contact.firstname }} {{ contact.lastname }}</h1>
-
-        <form name="show-contact">
-            <div class="form-background">
-                <div>
-                    <label for="number"></label>
-                    <input class="show-input" type="text" id="phone_number" value="{{ contact.phoneNumber }}">
-                </div>
-                <div>
-                    <label for="email"></label>
-                    <input class="show-input" type="email" id="email" value="{{ contact.email }}">
-                </div>
-                <div>
-                    <label for="country"></label>
-                    <input class="show-input" type="text" id="country" value="{{ contact.country }}">
-                </div>
-                <div>
-                    <label for="city"></label>
-                    <input class="show-input" type="text" id="city" value="{{ contact.city }}">
-                </div>
-                <div>
-                    <label for="adresse"></label>
-                    <input class="show-input" type="text" id="adresse" value="{{ contact.adress }}">
-                </div>
+            <div class="profil-logo">
+                <img class="profil-picture" src="{{ asset('build/images/profil-picture.png') }}" alt="ACME logo">
             </div>
-        </form>
 
-        <div class="two-show-btn">
+            <h1 class="show-title">{{ contact.firstname }} {{ contact.lastname }}</h1>
+
+            <div class="show-form">
+                <form>
+                    <div>
+                        <label for="number"></label>
+                        <input class="show-input" type="text" id="phone_number" value="{{ contact.phoneNumber }}">
+                    </div>
+                    <div>
+                        <label for="email"></label>
+                        <input class="show-input" type="email" id="email" value="{{ contact.email }}">
+                    </div>
+                    {# <div>
+                        <label for="country"></label>
+                        <input class="show-input" type="text" id="country" value="{{ contact.country }}">
+                    </div>
+                    <div>
+                        <label for="city"></label>
+                        <input class="show-input" type="text" id="city" value="{{ contact.city }}">
+                    </div>
+                    <div>
+                        <label for="adresse"></label>
+                        <input class="show-input" type="text" id="adresse" value="{{ contact.adress }}">
+                    </div> #}
+                </form>
+            </div>
+
             <a class="show-btn" href="{{ path('contact_edit', {'id': contact.id}) }}">Modifier</a>
-            <a class="show-btn"href="{{ path('contact_index') }}">Retour</a>
-        </div>
+            <a class="return-btn"href="{{ path('contact_index') }}">Retour</a>
 
-        {{ include('contact/_delete_form.html.twig') }}
+            {{ include('contact/_delete_form.html.twig') }}
+
+        </div>
 
     </div>
 

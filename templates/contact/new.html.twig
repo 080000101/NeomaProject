@@ -5,7 +5,16 @@
 {% block body %}
     <div class="new-background">
 
-        {{ include('contact/_form.html.twig') }}
-        
-    <div>
+        <div class="new-container">
+
+            <h1 class="new-title">Ajoutez un nouveau contact</h1>
+
+            <div class="new-form">
+                {{ include('contact/_form.html.twig') }}
+            </div>
+
+            <a class="return-btn"href="{{ path('contact_index') }}">Retour</a>
+        </div>
+
+    </div>
 {% endblock %}
