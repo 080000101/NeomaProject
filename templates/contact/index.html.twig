@@ -14,9 +14,9 @@
                         <h4 class="name">{{ contact.firstname }} {{ contact.lastname }}</h4>
                         <h4 class="phone-number"><img class="call-logo" src="{{ asset('build/images/call-logo.png') }}" alt="ACME call logo">{{ contact.phoneNumber }}</h4>
                         <h4 class="email"><img class="mail-logo" src="{{ asset('build/images/mail-logo.png') }}" alt="ACME mail logo">{{ contact.email }}</h4>
+                        <h4 class="adress"><img class="home-logo" src="{{ asset('build/images/home-logo.png') }}" alt="ACME home logo">{{ contact.adress }}</h4>
+                        <h4 class="location"><img class="location-logo" src="{{ asset('build/images/location-logo.png') }}" alt="ACME location logo">{{ contact.city }} {{ contact.country }}</h4>
                     </div>
-                        {# <h4>{{ contact.adress }}</h4>
-                        <h4>{{ contact.city }} {{ contact.country }}</h4> #}
                     <div class="actions-btn">
                         <a href="{{ path('contact_show', {'id': contact.id}) }}"><img class="show-logo" src="{{ asset('build/images/show-logo.png') }}" alt="ACME show logo"></a>
                         <a href="{{ path('contact_edit', {'id': contact.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>

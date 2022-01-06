@@ -10,11 +10,13 @@
 
         <div class="edit-container">
 
-            {{ include('contact/_form.html.twig', {'button_label': 'Enregistrer'}) }}
-
-            <a class="return-btn"href="{{ path('contact_index') }}">Retour</a>
+            <div class="edit-form">
+                {{ include('contact/_form.html.twig', {'button_label': 'Enregistrer'}) }}
+            </div>
             
             {{ include('contact/_delete_form.html.twig') }} 
+
+            <a class="return-btn"href="{{ path('contact_index') }}">Retour</a>
 
         </div>
 

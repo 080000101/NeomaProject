@@ -18,27 +18,34 @@ class ContactType extends AbstractType
     {
         $builder
             ->add('firstname', TextType::class,
-            ['attr' => ['class' => 'test',
-                        'placeholder' => 'Marie']
+            ['attr' => ['class' => 'name-test',
+                        'placeholder' => 'Prénom']
             ],)
             ->add('lastname', TextType::class,
             ['attr' => ['class' => 'test',
-                        'placeholder' => 'Dupont']
+                        'placeholder' => 'Nom']
             ],)
             ->add('phone_number', NumberType::class,
             ['attr' => ['class' => 'test',
-                        'placeholder' => '0654378965']
+                        'placeholder' => 'Numéro de téléphone']
             ],)
             ->add('email', TextType::class,
             ['attr' => ['class' => 'test',
-                        'placeholder' => 'mariedupont@gmail.com']
+                        'placeholder' => 'nomprénom@gmail.com']
             ],)
-            /* ->add('country', CountryType::class, [
+            ->add('country', CountryType::class, [
                 'placeholder' => 'Choisissez votre pays',
-                'mapped'      => false
+                'mapped'      => false,
+                'attr' => ['class' => 'test']
             ])
-            ->add('city')
-            ->add('adress') */
+            ->add('city', TextType::class,
+            ['attr' => ['class' => 'test',
+                        'placeholder' => 'Ville']
+            ],)
+            ->add('adress', TextType::class,
+            ['attr' => ['class' => 'test',
+                        'placeholder' => 'Adresse']
+            ],)
         ;
     }
 
