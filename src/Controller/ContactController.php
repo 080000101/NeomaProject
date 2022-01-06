@@ -17,8 +17,10 @@ class ContactController extends AbstractController
     #[Route('/', name: 'contact_index', methods: ['GET'])]
     public function index(ContactRepository $contactRepository): Response
     {
+        $user = $this->getUser();
+
         return $this->render('contact/index.html.twig', [
-            'contacts' => $contactRepository->findAll(),
+            'contacts' => $contactRepository->findByAccount($user),
         ]);
     }
 
@@ -28,8 +30,11 @@ class ContactController extends AbstractController
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
+        $user = $this->getUser();
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $contact->setAccount($user);
             $entityManager->persist($contact);
             $entityManager->flush();
 
@@ -71,7 +76,7 @@ class ContactController extends AbstractController
     #[Route('/{id}', name: 'contact_delete', methods: ['POST'])]
     public function delete(Request $request, Contact $contact, EntityManagerInterface $entityManager): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$contact->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $contact->getId(), $request->request->get('_token'))) {
             $entityManager->remove($contact);
             $entityManager->flush();
         }
