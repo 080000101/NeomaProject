@@ -3,22 +3,32 @@
 {% block title %}Créer un compte{% endblock %}
 
 {% block body %}
+
     <div class="register-background">
 
-        <div class="register-form-container">
+        <div class="register-form-background">
 
-            <div class="register-form">
-                {{ form_start(registrationForm) }}
-                    {{ form_row(registrationForm.email) }}
-                    {{ form_row(registrationForm.plainPassword, {
-                        label: 'Password'
-                    }) }}
+            <img class="logo-register" src="{{ asset('build/images/equipes-beige.png') }}" alt="ACME logo register">
+
+            <div class="register-form-container">
+
+                <h1 class="register-title">Bienvenue sur e-contact,
+Inscrivez-vous !</h1>
+
+                <div class="register-form">
+                    {{ form_start(registrationForm) }}
+                        {{ form_row(registrationForm.email) }}
+                        {{ form_row(registrationForm.plainPassword, {
+                            label: 'Password'
+                        }) }}
+                </div>
+
+                <button type="submit" class="register-btn">S'inscrire</button>
+                {{ form_end(registrationForm) }}
+
             </div>
 
         </div>
-
-        <button type="submit" class="register-btn">S'inscrire</button>
-        {{ form_end(registrationForm) }}
 
     </div>
 {% endblock %}
