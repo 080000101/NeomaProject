@@ -28,7 +28,7 @@ class Contact
     private $lastname;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="string", length=99999999999, nullable=true)
      */
     private $phone_number;
 
@@ -87,12 +87,12 @@ class Contact
         return $this;
     }
 
-    public function getPhoneNumber(): ?int
+    public function getPhoneNumber(): ?string
     {
         return $this->phone_number;
     }
 
-    public function setPhoneNumber(?int $phone_number): self
+    public function setPhoneNumber(?string $phone_number): self
     {
         $this->phone_number = $phone_number;
 
