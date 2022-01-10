@@ -36,7 +36,7 @@
     overflow-y: scroll;
     height: 100%;
     position: relative;
-    top: 3rem;
+    top: 5rem;
 }
 
 .h4 {
@@ -75,7 +75,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 3rem;
     padding-left: 1.5rem;
     padding-right: 1rem;
 }
@@ -95,6 +95,7 @@
 
 .list-title {
     font-size: 5rem;
+    color: $main-color;
 }
 
 /* 

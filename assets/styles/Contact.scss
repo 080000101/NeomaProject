@@ -1,40 +1,46 @@
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~AddContact.scss~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-.new-background {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100vh;
-    background: linear-gradient(-45deg, rgb(48, 71, 94) 0%, rgb(126, 138, 151) 100%);
-    overflow-y: scroll;
-}
-
-.new-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.new-form {
-    width: 70%;
-}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ButtonContact.scss~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 .test, .name-test {
     height: 8rem;
     width: 100%;
     background-color: transparent;
-    border: 5px solid $secondary-color;
+    border: 5px solid $main-color;
     border-radius: 20px;
     margin-bottom: 5rem;
     font-size: 3rem;
     padding-left: 5rem;
-    color: $secondary-color;
+    color: $main-color;
     overflow-x: scroll;
 }
 
-
 .name-test {
     margin-top: 5rem;
+}
+
+.edit {
+    height: 5rem;
+    position: fixed;
+    top: 2.5rem;
+    right: 2.5rem;
+}
+.delete-logo {
+    height: 6rem;
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+}
+.delete-btn {
+    position: fixed;
+    bottom: 4.5rem;
+    right: 4.5rem;
+    background-color: transparent;
+    border: #CBAF87;
+}
+.retour {
+    height: 6rem;
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
 }
 
 .div-save-btn {
@@ -42,99 +48,14 @@
     justify-content: center;
     align-items: center;
 }
-
-.save-btn, .show-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 8rem;
-    width: 25rem;
+.save-btn {
+    width: 16rem;
     background-color: transparent;
-    border: 5px solid $secondary-color;
+    border: 2px solid #000;
     border-radius: 100px;
-    font-size: 3.2rem;
-    color: $secondary-color;
-    margin-top: 5rem;
-}
-
-.show-btn {
-    text-decoration: none;
-    margin-top: 2rem;
-}
-
-.new-title {
-    display: none;
-}
-
-#contact_account {
-    display: none;
-}
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~EditContact.scss~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-.edit-background {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    background: linear-gradient(-45deg, rgb(48, 71, 94) 0%, rgb(126, 138, 151) 100%);
-}
-
-.edit-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.edit-form {
-    width: 70%;
-}
-
-.edit-title {
-    display: none;
-}
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-@media screen and (min-width: 1100px) {
-    .new-background, .edit-background, .show-background {
-        align-items: center;        
-        overflow-x: hidden;
-        background: $fourth-color;
-    }
-    .new-container, .edit-container, .show-container {
-        background: linear-gradient(45deg, rgba(203,175,135,1) 0%, rgba(231,222,200,1) 100%);
-        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
-        height: 90%;
-        width: 35rem;
-        justify-content: center;
-        border-radius: 20px;
-        margin-top: 5rem;
-        margin-bottom: 5rem;
-    }
-    .save-btn, .return-btn, .delete-btn, .show-btn {
-        height: 4rem;
-        width: 15rem;
-        font-size: 1.5rem;
-        border: 2px solid $main-color;
-        color: $main-color;
-    }
-    .return-btn, .delete-btn, .show-btn {
-        margin-top: 1rem;
-    }
-    .show-input, .test, .name-test {
-        height: 4rem;
-        margin-bottom: 1.5rem;
-        font-size: 1.5rem;
-        padding-left: 2rem;
-        border: 2px solid $main-color;
-        color: $main-color;
-    }
-    .show-title {
-        font-size: 3.5rem;
-        color: $main-color;
-        padding-bottom: 2rem;
-    }
+    font-size: 2.5rem;
+    color: #000;
+    position: fixed;
+    top: 3rem;
+    right: 2.5rem;
 }
