@@ -6,31 +6,38 @@
 
     <div class="list-background">
 
-        <div class="infos-container">
-            {% for contact in contacts %}
-                <div class="infos">
-                    {# <h4>{{ contact.id }}</h4> #}
-                    <div class="h4">
-                        <h4 class="name">{{ contact.firstname }} {{ contact.lastname }}</h4>
-                        <h4 class="phone-number"><img class="call-logo" src="{{ asset('build/images/call-logo.png') }}" alt="ACME call logo">{{ contact.phoneNumber }}</h4>
-                        <h4 class="email"><img class="mail-logo" src="{{ asset('build/images/mail-logo.png') }}" alt="ACME mail logo">{{ contact.email }}</h4>
-                        <h4 class="adress"><img class="home-logo" src="{{ asset('build/images/home-logo.png') }}" alt="ACME home logo">{{ contact.adress }}</h4>
-                        <h4 class="location"><img class="location-logo" src="{{ asset('build/images/location-logo.png') }}" alt="ACME location logo">{{ contact.city }} {{ contact.country }}</h4>
-                    </div>
-                    <div class="actions-btn">
-                        <a href="{{ path('contact_show', {'id': contact.id}) }}"><img class="show-logo" src="{{ asset('build/images/show-logo.png') }}" alt="ACME show logo"></a>
-                        <a href="{{ path('contact_edit', {'id': contact.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
-                    </div>
-                </div>
-            {% else %}
-                <h4 class="empty-title">Ajoutez de nouveaux contacts</h4>
-            {% endfor %}
+        <div class="header">
+
+            <img class="category" src="{{ asset('build/images/category.png') }}" alt="ACME category">
+
+            <h1 class="list-title">Contacts</h1>
+
+            {% if app.user %}<a class="deconnexion" href="{{ path('app_logout') }}"><img class="logout" src="{{ asset('build/images/logout.png') }}" alt="ACME logout"></a>{% endif %}
+        
         </div>
 
-        <a class="create-btn" href="{{ path('contact_new') }}">+</a>
+        <div class="infos-background">
 
-        {% if app.user %}<a class="deconnexion" href="{{ path('app_logout') }}">Déconnexion</a>{% endif %}
+            <div class="infos-container">
+                {% for contact in contacts %}
+                    <div class="infos">
+                        {# <h4>{{ contact.id }}</h4> #}
+                        <div class="h4"> 
+                            <img class="profil-icon" src="{{ asset('build/images/profil-icon.png') }}" alt="ACME profil icon">
+                            <a class="name-link" href="{{ path('contact_show', {'id': contact.id}) }}"><h4 class="name">{{ contact.firstname }} {{ contact.lastname }}</h4></a>
+                        </div>
+                        <div class="actions-btn">
+                            <a href="{{ path('contact_edit', {'id': contact.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
+                        </div>
+                    </div>
+                {% else %}
+                    <h4 class="empty-title">Ajoutez de nouveaux contacts</h4>
+                {% endfor %}
+            </div>
 
+        </div>
+
+        <a class="create-btn" href="{{ path('contact_new') }}"><img class="logo-plus" src="{{ asset('build/images/logo-plus.png') }}" alt="ACME logo plus"></a>
 
     </div>
 

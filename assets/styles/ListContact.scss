@@ -1,0 +1,165 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ListeContact.scss~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.list-background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $third-color;
+    height: 100vh;
+    padding-bottom: 4rem;
+}
+
+.infos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 100%;
+    border-radius: 10px;
+    color: $main-color;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.infos-background {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    height: 100%;
+    position: relative;
+    top: 3rem;
+}
+
+.h4 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.edit-logo {
+    height: 2.5rem;
+}
+
+.name {
+    font-size: 2rem;
+    padding-left: 2rem;
+    text-align: center;
+    color: $main-color;
+}
+
+.name-link {
+    text-decoration: none;
+}
+
+.profil-icon {
+    height: 6rem;
+}
+
+.create-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1rem;
+}
+
+.category {
+    height: 5rem;
+}
+.logo-plus {
+    height: 16rem;
+    position: fixed;
+    right: 0rem;
+    bottom: 0rem;
+}
+.logout {
+    height: 5.5rem;
+}
+
+.list-title {
+    font-size: 5rem;
+}
+
+/* 
+
+.footer {
+    background-color: $secondary-color;
+    position: fixed;
+    bottom: 0;
+    height: $footer-height;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px -1px 13px 2px #7E8A97, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.phone-number {
+    padding-top: 2rem;
+}
+
+.phone-number, .email, .adress, .location {
+    font-size: 1.8rem;
+}
+
+.home-logo {
+    height: 4rem;
+}
+
+.call-logo, .mail-logo {
+    height: 2.5rem;
+}
+
+.location-logo {
+    height: 2rem;
+    padding-left: 1rem;
+}
+
+.empty-title {
+    color: $main-color;
+    font-size: 3rem;
+} */
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/* @media (prefers-color-scheme: dark) {
+    .infos {
+        background-color: $fifth-color;
+        color: $secondary-color;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .list-background {
+        height: 100%;
+    }
+    .profil-picture {
+        width: 50%;
+    }
+    .save-btn {
+        margin-top: 2rem;
+    }
+    .name {
+        font-size: 1.9rem;
+    }
+} */

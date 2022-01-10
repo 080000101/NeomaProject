@@ -25,7 +25,7 @@ class ContactType extends AbstractType
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Nom']
             ],)
-            ->add('phone_number', TelType::class,
+            /* ->add('phone_number', TelType::class,
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Numéro de téléphone']
             ],)
@@ -46,7 +46,7 @@ class ContactType extends AbstractType
             ->add('adress', TextType::class,
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Adresse']
-            ],)
+            ],)*/
         ;
     }
 
