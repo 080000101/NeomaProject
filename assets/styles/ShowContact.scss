@@ -1,0 +1,55 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ShowContact.scss~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.show-background {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: $secondary-color;
+    padding-top: 10rem;
+}
+
+.show-entête {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.show-scroll {
+    overflow-y: scroll;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.show-form {
+    width: 80%;
+}
+
+.show-input {
+    height: 10rem;
+    width: 100%;
+    background-color: whitesmoke;
+    border-radius: 20px;
+    font-size: 3rem;
+    padding-left: 5rem;
+    color: $main-color;
+    overflow-x: scroll;
+}
+
+.profil-logo {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.profil-picture {
+    width: 70%;
+    height: auto;
+}
+
+.show-title {
+    font-size: 5rem;
+    color: $main-color;
+    padding-bottom: 4rem;
+    padding-top: 1rem;
+}

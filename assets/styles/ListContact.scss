@@ -1,0 +1,182 @@
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ListeContact.scss~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.list-background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $secondary-color;
+    height: 100vh;
+    padding-bottom: 4rem;
+}
+
+.infos-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.infos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: whitesmoke;
+    width: 100%;
+    border-radius: 10px;
+    color: $main-color;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+}
+
+.infos-background {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-y: scroll;
+    height: 100%;
+    position: relative;
+    top: 5rem;
+}
+
+.h4 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.edit-logo {
+    height: 2.5rem;
+}
+
+.name {
+    font-size: 2rem;
+    padding-left: 2rem;
+    text-align: center;
+    color: $main-color;
+}
+
+.name-link {
+    text-decoration: none;
+}
+
+.profil-icon {
+    height: 6rem;
+}
+
+.checkbox {
+    margin-right: 3rem;
+    transform: scale(3);
+    margin-left: 1rem;
+}
+
+/* input:checked {
+    background-color: $third-color;
+} */
+
+.create-btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.top-page {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-left: 1.5rem;
+    padding-right: 1rem;
+}
+
+.category {
+    height: 5rem;
+}
+.logo-plus {
+    height: 16rem;
+    position: fixed;
+    right: 0rem;
+    bottom: 0rem;
+}
+.logout {
+    height: 5.5rem;
+}
+
+.list-title {
+    font-size: 5rem;
+    color: $main-color;
+}
+
+.logo-contact {
+    display: none;
+}
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/* @media screen and (min-width:1100px) {
+    .list-background {
+        background-color: $secondary-color;
+        padding-bottom: 1rem;
+    }
+    .top-page {
+        padding-top: 1rem;
+        margin-top: 0;
+        padding-bottom: 1rem;
+        background-color: $fourth-color;
+        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    }
+    .category {
+        height: 3rem;
+    }
+    .logout {
+        height: 4rem;
+    }
+    .list-title {
+        font-size: 3.5rem;
+        color: $secondary-color;
+    }
+    .logo-contact {
+        display: block;
+        height: 4rem;
+    }
+    .create-btn {
+        width: unset;
+    }
+    .logo-plus {
+        height: 5rem;
+        position: unset;
+    }
+    .infos-background {
+        top: 1rem;
+    }
+    .infos-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        margin-right: 1rem;
+    }
+    .infos {
+        width: 25rem;
+        margin: 1rem;
+    }
+    .checkbox {
+        margin-right: 2rem;
+        transform: scale(2);
+    }
+    .profil-icon {
+        height: 3rem;
+    }
+    .name {
+        font-size: 1.5rem;
+        padding-left: 1.3rem;
+        margin-bottom: 0;
+    }
+    .edit-logo {
+        height: 2rem;
+    }
+} */
