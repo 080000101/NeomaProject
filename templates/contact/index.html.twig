@@ -6,15 +6,15 @@
 
     <div class="list-background">
 
-        <div class="header">
+        <div class="top-page">
 
+            {# <img class="logo-contact" src="{{ asset('build/images/E-contact.png') }}" alt="ACME logo"> #}
             <img class="category" src="{{ asset('build/images/category.png') }}" alt="ACME category">
-
             <h1 class="list-title">Contacts</h1>
-
             {% if app.user %}<a class="deconnexion" href="{{ path('app_logout') }}"><img class="logout" src="{{ asset('build/images/logout.png') }}" alt="ACME logout"></a>{% endif %}
         
         </div>
+
 
         <div class="infos-background">
 
@@ -23,6 +23,7 @@
                     <div class="infos">
                         {# <h4>{{ contact.id }}</h4> #}
                         <div class="h4"> 
+                            <input type="checkbox" class="checkbox" name="checkbox" value="{{ contact.id }}">
                             <img class="profil-icon" src="{{ asset('build/images/profil-icon.png') }}" alt="ACME profil icon">
                             <a class="name-link" href="{{ path('contact_show', {'id': contact.id}) }}"><h4 class="name">{{ contact.firstname }} {{ contact.lastname }}</h4></a>
                         </div>

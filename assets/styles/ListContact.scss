@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $third-color;
+    background-color: $secondary-color;
     height: 100vh;
     padding-bottom: 4rem;
 }
@@ -64,13 +64,23 @@
     height: 6rem;
 }
 
+.checkbox {
+    margin-right: 3rem;
+    transform: scale(3);
+    margin-left: 1rem;
+}
+
+/* input:checked {
+    background-color: $third-color;
+} */
+
 .create-btn {
     width: 100%;
     display: flex;
     justify-content: center;
 }
 
-.header {
+.top-page {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -98,69 +108,75 @@
     color: $main-color;
 }
 
-/* 
-
-.footer {
-    background-color: $secondary-color;
-    position: fixed;
-    bottom: 0;
-    height: $footer-height;
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    box-shadow: 0px -1px 13px 2px #7E8A97, 5px 5px 15px 5px rgba(0,0,0,0);
+.logo-contact {
+    display: none;
 }
 
-.phone-number {
-    padding-top: 2rem;
-}
 
-.phone-number, .email, .adress, .location {
-    font-size: 1.8rem;
-}
-
-.home-logo {
-    height: 4rem;
-}
-
-.call-logo, .mail-logo {
-    height: 2.5rem;
-}
-
-.location-logo {
-    height: 2rem;
-    padding-left: 1rem;
-}
-
-.empty-title {
-    color: $main-color;
-    font-size: 3rem;
-} */
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
-
-/* @media (prefers-color-scheme: dark) {
-    .infos {
-        background-color: $fifth-color;
+/* @media screen and (min-width:1100px) {
+    .list-background {
+        background-color: $secondary-color;
+        padding-bottom: 1rem;
+    }
+    .top-page {
+        padding-top: 1rem;
+        margin-top: 0;
+        padding-bottom: 1rem;
+        background-color: $fourth-color;
+        box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    }
+    .category {
+        height: 3rem;
+    }
+    .logout {
+        height: 4rem;
+    }
+    .list-title {
+        font-size: 3.5rem;
         color: $secondary-color;
     }
-}
-
-@media screen and (min-width: 1100px) {
-    .list-background {
-        height: 100%;
+    .logo-contact {
+        display: block;
+        height: 4rem;
     }
-    .profil-picture {
-        width: 50%;
+    .create-btn {
+        width: unset;
     }
-    .save-btn {
-        margin-top: 2rem;
+    .logo-plus {
+        height: 5rem;
+        position: unset;
+    }
+    .infos-background {
+        top: 1rem;
+    }
+    .infos-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+        margin-right: 1rem;
+    }
+    .infos {
+        width: 25rem;
+        margin: 1rem;
+    }
+    .checkbox {
+        margin-right: 2rem;
+        transform: scale(2);
+    }
+    .profil-icon {
+        height: 3rem;
     }
     .name {
-        font-size: 1.9rem;
+        font-size: 1.5rem;
+        padding-left: 1.3rem;
+        margin-bottom: 0;
+    }
+    .edit-logo {
+        height: 2rem;
     }
 } */
