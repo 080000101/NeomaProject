@@ -32,16 +32,6 @@ class Adress
      */
     private $adress;
 
-    /**
-     * @ORM\Column(type="string", length=45, nullable=true)
-     */
-    private $name;
-
-    /**
-     * @ORM\Column(type="string", length=45, nullable=true)
-     */
-    private $zip_code;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -79,30 +69,6 @@ class Adress
     public function setAdress(?string $adress): self
     {
         $this->adress = $adress;
-
-        return $this;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(?string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function getZipCode(): ?string
-    {
-        return $this->zip_code;
-    }
-
-    public function setZipCode(?string $zip_code): self
-    {
-        $this->zip_code = $zip_code;
 
         return $this;
     }
