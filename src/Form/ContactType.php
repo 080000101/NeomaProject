@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Contact;
+use App\Entity\PhoneNumber;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -25,11 +26,15 @@ class ContactType extends AbstractType
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Nom']
             ],)
-            ->add('phone_number', TelType::class,
+            ->add('name', TextType::class,
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Numéro de téléphone']
             ],)
-            ->add('email', EmailType::class,
+            ->add('number', TelType::class,
+            ['attr' => ['class' => 'test',
+                        'placeholder' => 'Numéro de téléphone']
+            ],)
+            /*->add('email', EmailType::class,
 
             ['attr' => ['class' => 'test',
                         'placeholder' => 'nomprénom@gmail.com']
@@ -46,7 +51,7 @@ class ContactType extends AbstractType
             ->add('adress', TextType::class,
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Adresse']
-            ],)
+            ],)*/
         ;
     }
 
