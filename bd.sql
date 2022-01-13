@@ -54,6 +54,8 @@ CREATE TABLE `adress` (
   `country` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `city` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `adress` varchar(75) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `zip_code` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -79,7 +81,7 @@ CREATE TABLE `contact` (
   `account_id` int NOT NULL,
   `firstname` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `lastname` varchar(40) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone_number` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone_number` longtext COLLATE utf8mb4_unicode_ci,
   `email` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `country` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `city` varchar(40) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -121,7 +123,7 @@ CREATE TABLE `doctrine_migration_versions` (
 
 LOCK TABLES `doctrine_migration_versions` WRITE;
 /*!40000 ALTER TABLE `doctrine_migration_versions` DISABLE KEYS */;
-INSERT INTO `doctrine_migration_versions` VALUES ('DoctrineMigrations\\Version20211203100723',NULL,NULL),('DoctrineMigrations\\Version20211207135654',NULL,NULL),('DoctrineMigrations\\Version20211207151521',NULL,NULL),('DoctrineMigrations\\Version20211210092839','2021-12-10 10:28:53',177),('DoctrineMigrations\\Version20220105095614','2022-01-06 12:19:22',53),('DoctrineMigrations\\Version20220105102002','2022-01-12 13:08:54',72),('DoctrineMigrations\\Version20220105102243','2022-01-12 13:18:59',14),('DoctrineMigrations\\Version20220106111901','2022-01-12 13:19:52',52);
+INSERT INTO `doctrine_migration_versions` VALUES ('DoctrineMigrations\\Version20211203100723',NULL,NULL),('DoctrineMigrations\\Version20211207135654',NULL,NULL),('DoctrineMigrations\\Version20211207151521',NULL,NULL),('DoctrineMigrations\\Version20211210092839','2021-12-10 10:28:53',177),('DoctrineMigrations\\Version20220105095614','2022-01-06 12:19:22',53),('DoctrineMigrations\\Version20220105102002','2022-01-12 13:08:54',72),('DoctrineMigrations\\Version20220105102243','2022-01-12 13:18:59',14),('DoctrineMigrations\\Version20220106111901','2022-01-12 13:19:52',52),('DoctrineMigrations\\Version20220113093737','2022-01-13 10:37:53',165);
 /*!40000 ALTER TABLE `doctrine_migration_versions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -182,4 +184,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-12 13:24:38
+-- Dump completed on 2022-01-13 10:39:12
