@@ -26,15 +26,15 @@ class ContactType extends AbstractType
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Nom']
             ],)
-            ->add('name', TextType::class,
+            /*->add('name', TextType::class,
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Numéro de téléphone']
             ],)
-            ->add('number', TelType::class,
+            ->add('number', PhoneNumber::class,
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Numéro de téléphone']
             ],)
-            /*->add('email', EmailType::class,
+            ->add('email', EmailType::class,
 
             ['attr' => ['class' => 'test',
                         'placeholder' => 'nomprénom@gmail.com']
