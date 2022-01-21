@@ -16,10 +16,25 @@
 
         </div>
 
+        {% for PhoneNumber in PhoneNumbers %}
+            <div class="infos">
+                <div class="h4"> 
+                    <input type="checkbox" class="checkbox" name="checkbox" value="{{ PhoneNumber.id }}">
+                    <img class="profil-icon" src="{{ asset('build/images/profil-icon.png') }}" alt="ACME profil icon">
+                </div>
+                <div class="actions-btn">
+                    <a href="{{ path('contact_edit', {'id': contact.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
+                </div>
+            </div>
+        {% endfor %}
+
+        <a href="{{ path('phone_number_new', {'id': contact.id}) }}" class="empty-title">Ajoutez un nouveau numéro de téléphone</h4>
+        <a href="{{ path('phone_number_index', {'id': contact.id}) }}" class="empty-title">index_phone</h4>
+
         <div class="show-scroll">
             <div class="show-form">
                 <form>
-                    <div>
+                    {#<div>
                         <label for="number"></label>
                         <input class="show-input" type="text" id="phone_number" value="{{ contact.phoneNumber }}">
                     </div>
@@ -38,7 +53,7 @@
                     <div>
                         <label for="country"></label>
                         <input class="show-input" type="text" id="country" value="{{ contact.country }}">
-                    </div>
+                    </div> #}
                 </form>
             </div>
         </div>
