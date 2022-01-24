@@ -37,7 +37,6 @@ class PhoneNumberController extends AbstractController
             $entityManager->flush();
 
             return $this->redirectToRoute('contact_show', ['id'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
-            /* return $this->redirectToRoute('phone_number_index', [], Response::HTTP_SEE_OTHER); */
         }
 
         return $this->renderForm('phone_number/new.html.twig', [

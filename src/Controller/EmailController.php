@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Email;
 use App\Form\EmailType;
 use App\Repository\EmailRepository;
+use App\Repository\ContactRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,22 +19,24 @@ class EmailController extends AbstractController
     public function index(EmailRepository $emailRepository): Response
     {
         return $this->render('email/index.html.twig', [
-            'emails' => $emailRepository->findAll(),
+            'Emails' => $emailRepository->findAll(),
         ]);
     }
 
     #[Route('/new', name: 'email_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, ContactRepository $contactRepository): Response
     {
         $email = new Email();
         $form = $this->createForm(EmailType::class, $email);
         $form->handleRequest($request);
+        $contact = $contactRepository->find($request->get("id"));
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $email->setContact($contact);
             $entityManager->persist($email);
             $entityManager->flush();
 
-            return $this->redirectToRoute('email_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['id'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('email/new.html.twig', [
