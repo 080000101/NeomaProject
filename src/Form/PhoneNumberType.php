@@ -9,7 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 
-class PhoneNumber1Type extends AbstractType
+class PhoneNumberType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -18,7 +18,7 @@ class PhoneNumber1Type extends AbstractType
             ['attr' => ['class' => 'name-test',
                         'placeholder' => 'Libellé']
             ],)
-            ->add('number', TextType::class,
+            ->add('number', PhoneNumberType::class,
             ['attr' => ['class' => 'name-test',
                         'placeholder' => 'Numéro de téléphone']
             ],)

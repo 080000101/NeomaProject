@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\PhoneNumber;
-use App\Form\PhoneNumber1Type;
+use App\Form\PhoneNumberType;
 use App\Repository\PhoneNumberRepository;
 use App\Repository\ContactRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -18,17 +18,16 @@ class PhoneNumberController extends AbstractController
     #[Route('/', name: 'phone_number_index', methods: ['GET'])]
     public function index(PhoneNumberRepository $phoneNumberRepository): Response
     {
-        $this->redirect('contact/{id}');
-        /* return $this->render('phone_number/index.html.twig', [
+        return $this->render('phone_number/index.html.twig', [
             'phone_numbers' => $phoneNumberRepository->findAll(),
-        ]);*/
+        ]);
     }
 
     #[Route('/new', name: 'phone_number_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, ContactRepository $contactRepository): Response
     {
         $phoneNumber = new PhoneNumber();
-        $form = $this->createForm(PhoneNumber1Type::class, $phoneNumber);
+        $form = $this->createForm(PhoneNumberType::class, $phoneNumber);
         $form->handleRequest($request);
         $contact = $contactRepository->find($request->get("id"));
 
@@ -57,7 +56,7 @@ class PhoneNumberController extends AbstractController
     #[Route('/{id}/edit', name: 'phone_number_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, PhoneNumber $phoneNumber, EntityManagerInterface $entityManager): Response
     {
-        $form = $this->createForm(PhoneNumber1Type::class, $phoneNumber);
+        $form = $this->createForm(PhoneNumberType::class, $phoneNumber);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

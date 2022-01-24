@@ -7,13 +7,10 @@
     <div class="show-background">
 
         <div class="show-entête">
-        
             <div class="profil-logo">
                 <img class="profil-picture" src="{{ asset('build/images/profil-icon.png') }}" alt="ACME logo">
             </div>
-
             <h1 class="show-title">{{ contact.firstname }} {{ contact.lastname }}</h1>
-
         </div>
 
         {% for PhoneNumber in PhoneNumbers %}
@@ -21,42 +18,53 @@
                 <div class="h4"> 
                     <input type="checkbox" class="checkbox" name="checkbox" value="{{ PhoneNumber.id }}">
                     <img class="profil-icon" src="{{ asset('build/images/profil-icon.png') }}" alt="ACME profil icon">
+                    <h4 class="name">{{ PhoneNumber.name }} : {{ PhoneNumber.number }}</h4>
                 </div>
                 <div class="actions-btn">
-                    <a href="{{ path('contact_edit', {'id': contact.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
+                    <a href="{{ path('phone_number_edit', {'id': PhoneNumber.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
                 </div>
             </div>
         {% endfor %}
 
         <a href="{{ path('phone_number_new', {'id': contact.id}) }}" class="empty-title">Ajoutez un nouveau numéro de téléphone</h4>
-        <a href="{{ path('phone_number_index', {'id': contact.id}) }}" class="empty-title">index_phone</h4>
 
-        <div class="show-scroll">
-            <div class="show-form">
-                <form>
-                    {#<div>
-                        <label for="number"></label>
-                        <input class="show-input" type="text" id="phone_number" value="{{ contact.phoneNumber }}">
-                    </div>
-                    <div>
-                        <label for="email"></label>
-                        <input class="show-input" type="email" id="email" value="{{ contact.email }}">
-                    </div>
-                    <div>
-                        <label for="adresse"></label>
-                        <input class="show-input" type="text" id="adresse" value="{{ contact.adress }}">
-                    </div>
-                    <div>
-                        <label for="city"></label>
-                        <input class="show-input" type="text" id="city" value="{{ contact.city }}">
-                    </div>
-                    <div>
-                        <label for="country"></label>
-                        <input class="show-input" type="text" id="country" value="{{ contact.country }}">
-                    </div> #}
-                </form>
+
+        {% for Email in Emails %}
+            <div class="infos">
+                <div class="h4"> 
+                    <input type="checkbox" class="checkbox" name="checkbox" value="{{ Email.id }}">
+                    <img class="profil-icon" src="{{ asset('build/images/profil-icon.png') }}" alt="ACME profil icon">
+                    <h4 class="name">{{ Email.name }} : {{ Email.email }}</h4>
+                </div>
+                <div class="actions-btn">
+                    <a href="{{ path('email_edit', {'id': Email.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
+                </div>
             </div>
-        </div>
+        {% endfor %}
+
+        <a href="{{ path('email_new', {'id': contact.id}) }}" class="empty-title">Ajoutez une nouvelle adresse email</h4>
+
+
+
+        {% for Adress in Adresses %}
+            <div class="infos">
+                <div class="h4"> 
+                    <input type="checkbox" class="checkbox" name="checkbox" value="{{ Adress.id }}">
+                    <img class="profil-icon" src="{{ asset('build/images/profil-icon.png') }}" alt="ACME profil icon">
+                    <h4 class="name">{{ Adress.name }} : {{ Adress.adress }} {{ Adress.zip_code }} {{ Adress.city }} {{ Adress.country }}</h4>
+                </div>
+                <div class="actions-btn">
+                    <a href="{{ path('Adress_edit', {'id': Adress.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
+                </div>
+            </div>
+        {% endfor %}
+
+        <a href="{{ path('adress_new', {'id': contact.id}) }}" class="empty-title">Ajoutez une nouvelle adresse</h4>
+
+        {# <div class="show-scroll">
+            <div class="show-form">
+            </div>
+        </div> #}
 
         <a class="edit-btn" href="{{ path('contact_edit', {'id': contact.id}) }}"><img class="edit" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
 
