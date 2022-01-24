@@ -7,13 +7,10 @@
     <div class="show-background">
 
         <div class="show-entête">
-        
             <div class="profil-logo">
                 <img class="profil-picture" src="{{ asset('build/images/profil-icon.png') }}" alt="ACME logo">
             </div>
-
             <h1 class="show-title">{{ contact.firstname }} {{ contact.lastname }}</h1>
-
         </div>
 
         {% for PhoneNumber in PhoneNumbers %}
@@ -27,34 +24,13 @@
                     <a href="{{ path('phone_number_edit', {'id': PhoneNumber.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
                 </div>
             </div>
-        {% else %}
-            <h4 class="empty-title">Ajoutez de nouveaux contacts</h4>
         {% endfor %}
+
+        <a href="{{ path('phone_number_new', {'id': contact.id}) }}" class="empty-title">Ajoutez un nouveau numéro de téléphone</h4>
+        <a href="{{ path('phone_number_index', {'id': contact.id}) }}" class="empty-title">index_phone</h4>
 
         <div class="show-scroll">
             <div class="show-form">
-                <form>
-                    <div>
-                        <label for="number"></label>
-                        <input class="show-input" type="text" id="phone_number" value="{{ contact.phoneNumber }}">
-                    </div>
-                    {# <div>
-                        <label for="email"></label>
-                        <input class="show-input" type="email" id="email" value="{{ contact.email }}">
-                    </div>
-                    <div>
-                        <label for="adresse"></label>
-                        <input class="show-input" type="text" id="adresse" value="{{ contact.adress }}">
-                    </div>
-                    <div>
-                        <label for="city"></label>
-                        <input class="show-input" type="text" id="city" value="{{ contact.city }}">
-                    </div>
-                    <div>
-                        <label for="country"></label>
-                        <input class="show-input" type="text" id="country" value="{{ contact.country }}">
-                    </div> #}
-                </form>
             </div>
         </div>
 
