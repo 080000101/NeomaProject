@@ -27,12 +27,6 @@ class Email
      */
     private $email;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=contact::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $contact;
-
     public function getId(): ?int
     {
         return $this->id;
@@ -58,18 +52,6 @@ class Email
     public function setEmail(?string $email): self
     {
         $this->email = $email;
-
-        return $this;
-    }
-
-    public function getContact(): ?contact
-    {
-        return $this->contact;
-    }
-
-    public function setContact(?contact $contact): self
-    {
-        $this->contact = $contact;
 
         return $this;
     }

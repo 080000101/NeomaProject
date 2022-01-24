@@ -29,12 +29,6 @@ class PhoneNumber implements UserInterface
      */
     private $number;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=contact::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $contact;
-
     public function getId(): ?int
     {
         return $this->id;
