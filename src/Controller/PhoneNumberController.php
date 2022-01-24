@@ -18,10 +18,9 @@ class PhoneNumberController extends AbstractController
     #[Route('/', name: 'phone_number_index', methods: ['GET'])]
     public function index(PhoneNumberRepository $phoneNumberRepository): Response
     {
-        $this->redirect('contact/{id}');
-        /* return $this->render('phone_number/index.html.twig', [
+        return $this->render('phone_number/index.html.twig', [
             'phone_numbers' => $phoneNumberRepository->findAll(),
-        ]);*/
+        ]);
     }
 
     #[Route('/new', name: 'phone_number_new', methods: ['GET', 'POST'])]
