@@ -89,4 +89,26 @@ class Adress
 
         return $this;
     }
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+    public function getContact(): ?contact
+    {
+        return $this->contact;
+    }
+
+    public function setContact(?contact $contact): self
+    {
+        $this->contact = $contact;
+
+        return $this;
+    }
 }
