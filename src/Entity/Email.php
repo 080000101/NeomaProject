@@ -62,4 +62,19 @@ class Email
 
         return $this;
     }
+
+    public function getContact(): ?contact
+    {
+        return $this->contact;
+    }
+
+    public function setContact(?contact $contact): self
+    {
+        $this->contact = $contact;
+
+        return $this;
+    }
+    public function __toString() {
+        return gettype($this->id);
+    }
 }
