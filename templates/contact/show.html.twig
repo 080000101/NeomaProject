@@ -7,13 +7,10 @@
     <div class="show-background">
 
         <div class="show-entête">
-        
             <div class="profil-logo">
                 <img class="profil-picture" src="{{ asset('build/images/profil-icon.png') }}" alt="ACME logo">
             </div>
-
             <h1 class="show-title">{{ contact.firstname }} {{ contact.lastname }}</h1>
-
         </div>
 
         <a class="edit-btn" href="{{ path('contact_edit', {'id': contact.id}) }}"><img class="edit" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
