@@ -28,7 +28,7 @@ class PhoneNumber
     private $number;
 
     /**
-     * @ORM\ManyToOne(targetEntity=contact::class)
+     * @ORM\ManyToOne(targetEntity=Contact::class)
      * @ORM\JoinColumn(nullable=false)
      */
     private $contact;
