@@ -32,6 +32,23 @@ class Adress
      */
     private $adress;
 
+    /**
+     * @ORM\Column(type="string", length=45, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @ORM\Column(type="string", length=45, nullable=true)
+     */
+    private $zip_code;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Contact::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $contact;
+
+
     public function getId(): ?int
     {
         return $this->id;

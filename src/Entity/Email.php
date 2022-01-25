@@ -27,6 +27,13 @@ class Email
      */
     private $email;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Contact::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $contact;
+
+
     public function getId(): ?int
     {
         return $this->id;
