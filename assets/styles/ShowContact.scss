@@ -18,22 +18,60 @@
     overflow-y: scroll;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 70%;
 }
 
-.show-form {
+.phone-number, .email, .adress {
     width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.show-input {
-    height: 10rem;
-    width: 100%;
+.phone-number {
+    margin-top: 4rem;
+}
+
+.show-nea {
     background-color: whitesmoke;
-    border-radius: 20px;
-    font-size: 3rem;
-    padding-left: 5rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 9rem;
+    align-items: center;
+}
+
+.add-more {
+    font-size: 2.5rem;
+    color: #30475E;
+    text-decoration: none;
+    padding-top: 2rem;
+}
+
+.actions-btn {
+    margin-right: 2rem;
+}
+
+.show-h4 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.libellé {
+    font-size: 2.3rem;
+    color: #CBAF87;
+    padding-left: 4rem;
+    margin-bottom: 1rem;
+}
+
+.name {
+    font-size: 2.5rem;
+    padding-left: 4rem;
+    text-align: center;
     color: $main-color;
-    overflow-x: scroll;
 }
 
 .profil-logo {
