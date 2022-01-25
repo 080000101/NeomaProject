@@ -48,6 +48,7 @@ class Adress
      */
     private $contact;
 
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,42 +86,6 @@ class Adress
     public function setAdress(?string $adress): self
     {
         $this->adress = $adress;
-
-        return $this;
-    }
-
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(?string $name): self
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    public function getZipCode(): ?string
-    {
-        return $this->zip_code;
-    }
-
-    public function setZipCode(?string $zip_code): self
-    {
-        $this->zip_code = $zip_code;
-
-        return $this;
-    }
-
-    public function getContact(): ?contact
-    {
-        return $this->contact;
-    }
-
-    public function setContact(?contact $contact): self
-    {
-        $this->contact = $contact;
 
         return $this;
     }

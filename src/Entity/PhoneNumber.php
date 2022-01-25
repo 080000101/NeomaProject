@@ -35,6 +35,7 @@ class PhoneNumber implements UserInterface
      */
     private $contact;
 
+
     public function getId(): ?int
     {
         return $this->id;
