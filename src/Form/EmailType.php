@@ -16,11 +16,11 @@ class EmailType extends AbstractType
         $builder
             ->add('name', TextType::class,
             ['attr' => ['class' => 'name-test',
-                        'placeholder' => 'Libellé']
+                        'placeholder' => 'ex : Professionnel']
             ],)
             ->add('email', TextType::class,
             ['attr' => ['class' => 'name-test',
-                        'placeholder' => 'Adresse e-mail']
+                        'placeholder' => 'marie@gmail.com']
             ],)
         ;
     }

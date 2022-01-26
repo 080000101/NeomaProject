@@ -3,9 +3,19 @@
 {% block title %}New Email{% endblock %}
 
 {% block body %}
-    <h1>Create new Email</h1>
+    <div class="new-background">
 
-    {{ include('email/_form.html.twig') }}
+        {# <h1 class="new-title">Ajoutez un nouvelle adresse e-mail</h1> #}
+        
+        <div class="new-container">
 
-    <a href="{{ path('email_index') }}">back to list</a>
+            <div class="new-form">
+                {{ include('email/_form.html.twig') }}
+            </div>
+            
+            <a class="return-btn"href="{{ path('contact_index') }}"><img class="retour" src="{{ asset('build/images/retour.png') }}" alt="ACME retour"></a> 
+
+        </div>
+
+    </div>
 {% endblock %}
