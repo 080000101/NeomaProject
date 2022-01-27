@@ -33,6 +33,11 @@ class Contact
      */
     private $account;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Category::class)
+     */
+    private $category;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -70,6 +75,18 @@ class Contact
     public function setAccount(?Account $account): self
     {
         $this->account = $account;
+
+        return $this;
+    }
+
+    public function getCategory(): ?category
+    {
+        return $this->category;
+    }
+
+    public function setCategory(?category $category): self
+    {
+        $this->category = $category;
 
         return $this;
     }

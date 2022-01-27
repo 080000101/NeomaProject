@@ -9,7 +9,7 @@
         <div class="top-page">
 
             {# <img class="logo-contact" src="{{ asset('build/images/E-contact.png') }}" alt="ACME logo"> #}
-            <img class="category" src="{{ asset('build/images/category.png') }}" alt="ACME category">
+            <a href="{{ path('category_index') }}"><img class="category" src="{{ asset('build/images/category.png') }}" alt="ACME category"></a>
             <h1 class="list-title">Contacts</h1>
             {% if app.user %}<a class="deconnexion" href="{{ path('app_logout') }}"><img class="logout" src="{{ asset('build/images/logout.png') }}" alt="ACME logout"></a>{% endif %}
         
@@ -35,8 +35,6 @@
                     <h4 class="empty-title">Ajoutez de nouveaux contacts</h4>
                 {% endfor %}
             </div>
-
-            <a href="{{ path('phone_number_index') }}">back to list</a>
 
         </div>
 
