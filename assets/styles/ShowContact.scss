@@ -6,6 +6,19 @@
     height: 100vh;
     background-color: $secondary-color;
     padding-top: 10rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    background-color: transparent;
+    width: 100%;
+    border-radius: 50px;
 }
 
 .show-entête {
@@ -47,7 +60,7 @@
 
 .add-more {
     font-size: 2.5rem;
-    color: #30475E;
+    color: $main-color;
     text-decoration: none;
     padding-top: 2rem;
 }
@@ -87,9 +100,72 @@
     height: auto;
 }
 
+.profile-picture {
+    display: none;
+}
+
 .show-title {
     font-size: 5rem;
     color: $main-color;
     padding-bottom: 4rem;
     padding-top: 1rem;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+@media screen and (min-width: 1100px) {
+    .show-title {
+        font-size: 3rem;
+        padding-bottom: 0rem;
+        color: $secondary-color;
+    }
+    .profil-logo {
+        width: 15rem;
+    }
+    .show-background {
+        padding-top: 0rem;
+    }
+    .phone-number {
+        margin-top: 3rem;
+    }
+    .show-nea {
+        width: 100%;
+        height: fit-content;
+    }
+    .libellé {
+        font-size: 1.6rem;
+        padding-left: 3rem;
+        margin-bottom: 0.1rem;
+        margin-top: 0.3rem;
+    }
+    .name {
+        font-size: 1.8rem;
+        padding-left: 3rem;
+    }
+    .edit-logo {
+        height: 2.5rem;
+    }
+    .add-more {
+        font-size: 1.8rem;
+        padding-top: 0rem;
+        color: $secondary-color;
+    }
+    .show-container {
+        background-color: $fifth-color;
+        width: 35rem;
+    }
+    .show-scroll {
+        margin-bottom: 0.5rem;
+    }
+    .show-entête {
+        margin-top: 2rem;
+    }
+    .profil-picture {
+        display: none;
+    }
+    .profile-picture {
+        display: block;
+        width: 70%;
+        height: auto;
+    }
 }
