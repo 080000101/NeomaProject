@@ -17,11 +17,11 @@ class PhoneNumberType extends AbstractType
         $builder
             ->add('name', TextType::class,
             ['attr' => ['class' => 'name-test',
-                        'placeholder' => 'Libellé']
+                        'placeholder' => 'ex : Travail']
             ],)
             ->add('number', TelType::class,
             ['attr' => ['class' => 'name-test',
-                        'placeholder' => 'Numéro de téléphone']
+                        'placeholder' => '0987654321']
             ],)
         ;
     }

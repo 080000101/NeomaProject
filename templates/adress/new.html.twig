@@ -3,9 +3,19 @@
 {% block title %}New Adress{% endblock %}
 
 {% block body %}
-    <h1>Create new Adress</h1>
+    <div class="new-background">
 
-    {{ include('adress/_form.html.twig') }}
+        {# <h1 class="new-title">Ajoutez un nouvelle adresse</h1> #}
+        
+        <div class="new-container-adress">
 
-    <a href="{{ path('adress_index') }}">back to list</a>
+            <div class="new-form-adress">
+                {{ include('adress/_form.html.twig') }}
+            </div>
+            
+            <a class="return-btn"href="{{ path('contact_index') }}"><img class="retour" src="{{ asset('build/images/retour.png') }}" alt="ACME retour"></a> 
+
+        </div>
+
+    </div>
 {% endblock %}

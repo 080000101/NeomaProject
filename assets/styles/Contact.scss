@@ -3,18 +3,21 @@
 .test, .name-test {
     height: 8rem;
     width: 100%;
-    background-color: transparent;
-    border: 5px solid $main-color;
-    border-radius: 20px;
+    background-color: whitesmoke;
+    border-radius: 100px;
     margin-bottom: 5rem;
     font-size: 3rem;
     padding-left: 5rem;
     color: $main-color;
     overflow-x: scroll;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
-.name-test {
-    margin-top: 5rem;
+label {
+    font-size: 3rem;
+    padding-left: 2rem;
+    color: $main-color;
+    margin-bottom: 1rem;
 }
 
 .edit {
@@ -49,13 +52,12 @@
     align-items: center;
 }
 .save-btn {
-    width: 16rem;
-    background-color: transparent;
-    border: 2px solid #000;
-    border-radius: 100px;
-    font-size: 2.5rem;
-    color: #000;
-    position: fixed;
-    top: 3rem;
-    right: 2.5rem;
+    background-color: $third-color;
+    border-radius: 90px;
+    font-size: 3rem;
+    color: white;
+    height: 8rem;
+    width: 50%;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    margin-top: 7rem;
 }

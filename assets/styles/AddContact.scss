@@ -15,8 +15,22 @@
     align-items: center;
 }
 
+.new-container-adress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 70%;
+}
+
 .new-form {
-    width: 70%;
+    width: 80%;
+}
+
+.new-form-adress {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 .new-title {
@@ -26,4 +40,31 @@
 
 #contact_account {
     display: none;
+}
+
+form[name="phone_number"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form[name="adress"] {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 90%;
+    overflow-y: scroll;
+}
+
+.save-btn-adress {
+    background-color: $third-color;
+    border-radius: 90px;
+    font-size: 3rem;
+    color: white;
+    height: 8rem;
+    width: 50%;
+    box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+    margin-top: 7rem;
+    position: fixed;
+    bottom: 10rem;
 }
