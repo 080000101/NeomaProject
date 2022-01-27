@@ -16,9 +16,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class PhoneNumberController extends AbstractController
 {
     #[Route('/', name: 'phone_number_index', methods: ['GET'])]
-    public function index(Request $request, PhoneNumberRepository $phoneNumberRepository): Response
+    public function index(PhoneNumberRepository $phoneNumberRepository): Response
     {
-        return $this->redirectToRoute('contact_show', ['id'=> $request->get('id') ], Response::HTTP_SEE_OTHER);
+        return $this->render('phone_number/index.html.twig', [
+            'phone_numbers' => $phoneNumberRepository->findAll(),
+        ]);
     }
 
     #[Route('/new', name: 'phone_number_new', methods: ['GET', 'POST'])]

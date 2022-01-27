@@ -55,9 +55,9 @@ class ContactController extends AbstractController
     {
         return $this->render('contact/show.html.twig', [
             'contact' => $contact,
-            'PhoneNumbers' => $PhoneNumberRepository->findByContact($contact),
-            'Emails' => $emailRepository->findByContact($contact),
-            'Adresses' => $adressRepository->findByContact($contact),
+            'PhoneNumbers' => $PhoneNumberRepository->findAll(),
+            'Emails' => $emailRepository->findAll(),
+            'Adresses' => $adressRepository->findAll(),
         ]);
     }
 
