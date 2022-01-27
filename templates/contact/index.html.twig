@@ -29,10 +29,10 @@
                         </div>
                         <div class="actions-btn">
                             <a href="{{ path('contact_edit', {'id': contact.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
-                        </div>
+                     {% else %}
+                    <h4 class="empty-title">Ajoutez de nouveaux contacts</h4>   </div>
                     </div>
-                {% else %}
-                    <h4 class="empty-title">Ajoutez de nouveaux contacts</h4>
+                
                 {% endfor %}
             </div>
 
