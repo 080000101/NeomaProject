@@ -8,6 +8,7 @@ use App\Repository\ContactRepository;
 use App\Repository\PhoneNumberRepository;
 use App\Repository\EmailRepository;
 use App\Repository\AdressRepository;
+use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -51,13 +52,18 @@ class ContactController extends AbstractController
     }
 
     #[Route('/{id}', name: 'contact_show', methods: ['GET'])]
-    public function show(Contact $contact, PhoneNumberRepository $PhoneNumberRepository, EmailRepository $emailRepository, AdressRepository $adressRepository): Response
+    public function show(int $id, Contact $contact, PhoneNumberRepository $PhoneNumberRepository, EmailRepository $emailRepository, AdressRepository $adressRepository, CategoryRepository $categoryRepository): Response
     {
+        if(isset($_POST['envoi'])){ 
+            return $this;
+        }
+
         return $this->render('contact/show.html.twig', [
             'contact' => $contact,
             'PhoneNumbers' => $PhoneNumberRepository->findByContact($contact),
             'Emails' => $emailRepository->findByContact($contact),
             'Adresses' => $adressRepository->findByContact($contact),
+            'Categories' => $categoryRepository->findAll(),
         ]);
     }
 

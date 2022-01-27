@@ -65,6 +65,16 @@
                     <a href="{{ path('adress_new', {'id': contact.id}) }}" class="add-more">+ Ajoutez une adresse</h4>
                 </div>
 
+                <form action="categorie" method="post">
+                    <select>
+                        <option value="">--Choisir une catégorie--</option>
+                        {% for Category in Categories %}
+                            <option value="">{{ Category.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <input type="submit" name="envoi">
+                </form>
+
             </div>
             
         </div>
