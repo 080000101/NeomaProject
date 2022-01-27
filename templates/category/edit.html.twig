@@ -3,11 +3,21 @@
 {% block title %}Edit Category{% endblock %}
 
 {% block body %}
-    <h1>Edit Category</h1>
+    <div class="edit-background">
 
-    {{ include('category/_form.html.twig', {'button_label': 'Update'}) }}
+        <div class="edit-container">
 
-    <a href="{{ path('category_index') }}">back to list</a>
+            <h1 class="edit-title">Renommer une catégorie</h1>
 
-    {{ include('category/_delete_form.html.twig') }}
+            <div class="edit-form">
+                {{ include('category/_form.html.twig', {'button_label': 'Modifier'}) }}
+            </div>
+
+        </div>
+
+        {{ include('category/_delete_form.html.twig') }}
+
+        <a class="return-btn"href="{{ path('category_index') }}"><img class="retour" src="{{ asset('build/images/retour.png') }}" alt="ACME retour"></a> 
+
+    </div>
 {% endblock %}
