@@ -15,14 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/email')]
 class EmailController extends AbstractController
 {
-    #[Route('/', name: 'email_index', methods: ['GET'])]
-    public function index(EmailRepository $emailRepository): Response
-    {
-        return $this->render('email/index.html.twig', [
-            'emails' => $emailRepository->findAll(),
-        ]);
-    }
-
     #[Route('/new', name: 'email_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, ContactRepository $contactRepository): Response
     {
@@ -45,14 +37,6 @@ class EmailController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'email_show', methods: ['GET'])]
-    public function show(Email $email): Response
-    {
-        return $this->render('email/show.html.twig', [
-            'email' => $email,
-        ]);
-    }
-
     #[Route('/{id}/edit', name: 'email_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Email $email, EntityManagerInterface $entityManager): Response
     {
@@ -62,7 +46,7 @@ class EmailController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('email_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['id'=> $email->getContact()->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('email/edit.html.twig', [
@@ -79,6 +63,6 @@ class EmailController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('email_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('contact_show', ['id'=> $email->getContact()->getId()], Response::HTTP_SEE_OTHER);
     }
 }
