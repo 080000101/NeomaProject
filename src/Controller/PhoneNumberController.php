@@ -16,11 +16,9 @@ use Symfony\Component\Routing\Annotation\Route;
 class PhoneNumberController extends AbstractController
 {
     #[Route('/', name: 'phone_number_index', methods: ['GET'])]
-    public function index(PhoneNumberRepository $phoneNumberRepository): Response
+    public function index(Request $request, PhoneNumberRepository $phoneNumberRepository): Response
     {
-        return $this->render('phone_number/index.html.twig', [
-            'phone_numbers' => $phoneNumberRepository->findAll(),
-        ]);
+        return $this->redirectToRoute('contact_show', ['id'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
     }
 
     #[Route('/new', name: 'phone_number_new', methods: ['GET', 'POST'])]
@@ -62,7 +60,7 @@ class PhoneNumberController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('phone_number_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['id'=> $phoneNumber->getContact()->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('phone_number/edit.html.twig', [
@@ -79,6 +77,6 @@ class PhoneNumberController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('phone_number_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('contact_show', ['id'=> $phoneNumber->getContact()->getId()], Response::HTTP_SEE_OTHER);
     }
 }

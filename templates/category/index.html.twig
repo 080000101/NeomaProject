@@ -3,35 +3,37 @@
 {% block title %}Category index{% endblock %}
 
 {% block body %}
-    <h1>Category index</h1>
+    <div class="list-background">
 
-    <a class="return-btn"href="{{ path('contact_index') }}"><img class="retour" src="{{ asset('build/images/retour.png') }}" alt="ACME retour"></a>
+        <div class="top-page">
+            <h1 class="category-title">Liste des catégories</h1>
+        </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for category in categories %}
-            <tr>
-                <td>{{ category.id }}</td>
-                <td>{{ category.name }}</td>
-                <td>
-                    <a href="{{ path('category_show', {'id': category.id}) }}">show</a>
-                    <a href="{{ path('category_edit', {'id': category.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="3">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <div class="infos-background">
 
-    <a href="{{ path('category_new') }}">Create new</a>
+            <div class="infos-container">
+                {% for category in categories %}
+                    <div class="infos">
+                        {# <h4>{{ category.id }}</h4> #}
+                        <div class="h4"> 
+                            <input type="checkbox" class="checkbox" name="checkbox" value="{{ category.id }}">
+                            <h4 class="name">{{ category.name }}</h4>
+                        </div>
+                        <div class="actions-btn">
+                            <a href="{{ path('category_edit', {'id': category.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
+                        </div>
+                    </div>
+                {% else %}
+                    <h4 class="empty-title">Ajoutez de nouvelles categories</h4>
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <a class="return-btn"href="{{ path('contact_index') }}"><img class="retour" src="{{ asset('build/images/retour.png') }}" alt="ACME retour"></a>
+
+        <a class="create-btn" href="{{ path('category_new') }}"><img class="logo-plus" src="{{ asset('build/images/logo-plus.png') }}" alt="ACME logo plus"></a>
+
+    </div>
+
 {% endblock %}

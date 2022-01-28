@@ -22,7 +22,7 @@
                     {% for PhoneNumber in PhoneNumbers %}
                         <div class="show-nea">
                             <div class="show-h4"> 
-                                <div><h4 class="libellé">{{ PhoneNumber.name }} :</h4></div>
+                                <div><h4 class="libellé">{{ PhoneNumber.name }}</h4></div>
                                 <div><h4 class="name">{{ PhoneNumber.number }}</h4></div>
                             </div>
                             <div class="actions-btn">
@@ -31,14 +31,14 @@
                         </div>
                     {% endfor %}
 
-                    <a href="{{ path('phone_number_new', {'id': contact.id}) }}" class="add-more">+ Ajoutez un nouveau numéro de téléphone</h4>
+                    <a href="{{ path('phone_number_new', {'id': contact.id}) }}" class="add-more">+ Ajoutez un numéro</h4>
                 </div>
 
                 <div class="email">
                     {% for Email in Emails %}
                         <div class="show-nea">
                             <div class="show-h4"> 
-                                <div><h4 class="libellé">{{ Email.name }} :</h4></div>
+                                <div><h4 class="libellé">{{ Email.name }}</h4></div>
                                 <div><h4 class="name">{{ Email.email }}</h4></div>                       
                             </div>
                             <div class="actions-btn">
@@ -47,14 +47,14 @@
                         </div>
                     {% endfor %}
 
-                    <a href="{{ path('email_new', {'id': contact.id}) }}" class="add-more">+ Ajoutez un nouvelle adresse e-mail</h4>
+                    <a href="{{ path('email_new', {'id': contact.id}) }}" class="add-more">+ Ajoutez un adresse e-mail</h4>
                 </div>
 
                 <div class="adress">
                     {% for Adress in Adresses %}
                         <div class="show-nea">
                             <div class="show-h4"> 
-                                <div><h4 class="libellé">{{ Adress.name }} :</h4></div>
+                                <div><h4 class="libellé">{{ Adress.name }}</h4></div>
                                 <div><h4 class="name">{{ Adress.adress }} {{ Adress.city }} {{ Adress.country }}</h4></div>                       </div>
                             <div class="actions-btn">
                                 <a href="{{ path('adress_edit', {'id': Adress.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
@@ -62,7 +62,7 @@
                         </div>
                     {% endfor %}
 
-                    <a href="{{ path('adress_new', {'id': contact.id}) }}" class="add-more">+ Ajoutez un nouvelle adresse</h4>
+                    <a href="{{ path('adress_new', {'id': contact.id}) }}" class="add-more">+ Ajoutez une adresse</h4></a>
                 </div>
 
             </div>

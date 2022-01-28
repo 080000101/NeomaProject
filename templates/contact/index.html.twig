@@ -7,14 +7,21 @@
     <div class="list-background">
 
         <div class="top-page">
-
             {# <img class="logo-contact" src="{{ asset('build/images/E-contact.png') }}" alt="ACME logo"> #}
             <a href="{{ path('category_index') }}"><img class="category" src="{{ asset('build/images/category.png') }}" alt="ACME category"></a>
             <h1 class="list-title">Contacts</h1>
             {% if app.user %}<a class="deconnexion" href="{{ path('app_logout') }}"><img class="logout" src="{{ asset('build/images/logout.png') }}" alt="ACME logout"></a>{% endif %}
-        
         </div>
 
+        <form action="categorie" method="post">
+            <select>
+                <option value="">--Choisir une catégorie--</option>
+                {% for Category in Categories %}
+                    <option value="">{{ Category.name }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" name="envoi">
+        </form>
 
         <div class="infos-background">
 
@@ -32,13 +39,15 @@
                         </div>
                     </div>
                 {% else %}
-                    <h4 class="empty-title">Ajoutez de nouveaux contacts</h4>
+                    <h4 class="empty-title">Ajoutez de nouveaux contacts</h4>  
                 {% endfor %}
             </div>
 
+
+
         </div>
 
-        <a class="create-btn" href="{{ path('contact_new') }}"><img class="logo-plus" src="{{ asset('build/images/logo-plus.png') }}" alt="ACME logo plus"></a>
+        <a href="{{ path('contact_new') }}"><img class="logo-plus" src="{{ asset('build/images/logo-plus.png') }}" alt="ACME logo plus"></a>
 
     </div>
 

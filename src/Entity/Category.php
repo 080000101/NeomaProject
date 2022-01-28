@@ -22,6 +22,12 @@ class Category
      */
     private $name;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Account::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $account;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +41,18 @@ class Category
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getAccount(): ?account
+    {
+        return $this->account;
+    }
+
+    public function setAccount(?account $account): self
+    {
+        $this->account = $account;
 
         return $this;
     }

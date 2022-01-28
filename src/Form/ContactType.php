@@ -21,6 +21,10 @@ class ContactType extends AbstractType
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Nom']
             ],)
+            ->add('category', TextType::class,
+            ['attr' => ['class' => 'test',
+                        'placeholder' => 'Nom']
+            ],)
         ;
     }
 
