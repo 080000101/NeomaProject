@@ -17,7 +17,7 @@
                         {# <h4>{{ category.id }}</h4> #}
                         <div class="h4"> 
                             <input type="checkbox" class="checkbox" name="checkbox" value="{{ category.id }}">
-                            <a class="name-link" href="{{ path('category_show', {'id': category.id}) }}"><h4 class="name">{{ category.name }}</h4></a>
+                            <h4 class="name">{{ category.name }}</h4>
                         </div>
                         <div class="actions-btn">
                             <a href="{{ path('category_edit', {'id': category.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>

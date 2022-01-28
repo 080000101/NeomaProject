@@ -19,22 +19,27 @@ use Symfony\Component\Routing\Annotation\Route;
 class ContactController extends AbstractController
 {
     #[Route('/', name: 'contact_index', methods: ['GET'])]
-    public function index(ContactRepository $contactRepository): Response
+    public function index(ContactRepository $contactRepository, CategoryRepository $categoryRepository): Response
     {
         $user = $this->getUser();
 
         return $this->render('contact/index.html.twig', [
             'contacts' => $contactRepository->findByAccount($user),
+            'Categories' => $categoryRepository->findByAccount($user),
         ]);
     }
 
     #[Route('/new', name: 'contact_new', methods: ['GET', 'POST'])]
-    public function new(Request $request, EntityManagerInterface $entityManager): Response
+    public function new(Request $request, EntityManagerInterface $entityManager, CategoryRepository $categoryRepository): Response
     {
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
         $user = $this->getUser();
+
+        if(isset($_POST['envoi'])){ 
+            return $this;
+        }
 
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -48,16 +53,14 @@ class ContactController extends AbstractController
         return $this->renderForm('contact/new.html.twig', [
             'contact' => $contact,
             'form' => $form,
+            'Categories' => $categoryRepository->findAll(),
         ]);
     }
 
     #[Route('/{id}', name: 'contact_show', methods: ['GET'])]
     public function show(int $id, Contact $contact, PhoneNumberRepository $PhoneNumberRepository, EmailRepository $emailRepository, AdressRepository $adressRepository, CategoryRepository $categoryRepository): Response
     {
-        if(isset($_POST['envoi'])){ 
-            return $this;
-        }
-
+        
         return $this->render('contact/show.html.twig', [
             'contact' => $contact,
             'PhoneNumbers' => $PhoneNumberRepository->findByContact($contact),

@@ -60,7 +60,7 @@ class PhoneNumberController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('phone_number_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['id'=> $phoneNumber->getContact()->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('phone_number/edit.html.twig', [
@@ -77,6 +77,6 @@ class PhoneNumberController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('phone_number_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('contact_show', ['id'=> $phoneNumber->getContact()->getId()], Response::HTTP_SEE_OTHER);
     }
 }
