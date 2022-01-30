@@ -7,6 +7,9 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
+
 
 class ContactType extends AbstractType
 {
@@ -21,10 +24,11 @@ class ContactType extends AbstractType
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Nom']
             ],)
-            ->add('category', TextType::class,
-            ['attr' => ['class' => 'test',
-                        'placeholder' => 'Nom']
-            ],)
+            ->add('category', null, [
+                'choice_label' => 'name',
+                'attr' => ['class' => 'test',
+                           'placeholder' => 'category']
+            ])
         ;
     }
 

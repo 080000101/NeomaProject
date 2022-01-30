@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Entity\Category;
 use App\Form\ContactType;
 use App\Repository\ContactRepository;
 use App\Repository\PhoneNumberRepository;
@@ -57,16 +58,15 @@ class ContactController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'contact_show', methods: ['GET'])]
-    public function show(int $id, Contact $contact, PhoneNumberRepository $PhoneNumberRepository, EmailRepository $emailRepository, AdressRepository $adressRepository, CategoryRepository $categoryRepository): Response
+    #[Route('/{contact}', name: 'contact_show', methods: ['GET'])]
+    public function show(Contact $contact, PhoneNumberRepository $PhoneNumberRepository, EmailRepository $emailRepository, AdressRepository $adressRepository, CategoryRepository $categoryRepository): Response
     {
-        
         return $this->render('contact/show.html.twig', [
             'contact' => $contact,
             'PhoneNumbers' => $PhoneNumberRepository->findByContact($contact),
             'Emails' => $emailRepository->findByContact($contact),
             'Adresses' => $adressRepository->findByContact($contact),
-            'Categories' => $categoryRepository->findAll(),
+            'categories' => $categoryRepository->findAll(),
         ]);
     }
 

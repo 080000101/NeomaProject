@@ -66,6 +66,12 @@
                 </div>
 
             </div>
+
+            {#<div>
+                {% for category in categories %}
+                    <h4 class="libellé">Catégorie : {{ category.name }}</h4>
+                {% endfor %}      
+            </div>#}
             
         </div>
 

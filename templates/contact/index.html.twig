@@ -15,7 +15,7 @@
 
         <form action="categorie" method="post">
             <select>
-                <option value="">--Choisir une catégorie--</option>
+                <option value="">Choisir une catégorie</option>
                 {% for Category in Categories %}
                     <option value="">{{ Category.name }}</option>
                 {% endfor %}
@@ -32,7 +32,7 @@
                         <div class="h4"> 
                             <input type="checkbox" class="checkbox" name="checkbox" value="{{ contact.id }}">
                             <img class="profil-icon" src="{{ asset('build/images/profil-icon.png') }}" alt="ACME profil icon">
-                            <a class="name-link" href="{{ path('contact_show', {'id': contact.id}) }}"><h4 class="name">{{ contact.firstname }} {{ contact.lastname }}</h4></a>
+                            <a class="name-link" href="{{ path('contact_show', { contact : contact.id}) }}"><h4 class="name">{{ contact.firstname }} {{ contact.lastname }}</h4></a>
                         </div>
                         <div class="actions-btn">
                             <a href="{{ path('contact_edit', {'id': contact.id}) }}"><img class="edit-logo" src="{{ asset('build/images/edit-logo.png') }}" alt="ACME edit logo"></a>
