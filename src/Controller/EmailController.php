@@ -28,7 +28,7 @@ class EmailController extends AbstractController
             $entityManager->persist($email);
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact_show', ['id'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['contact'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('email/new.html.twig', [
@@ -46,7 +46,7 @@ class EmailController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact_show', ['id'=> $email->getContact()->getId()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['contact'=> $email->getContact()->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('email/edit.html.twig', [
@@ -63,6 +63,6 @@ class EmailController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('contact_show', ['id'=> $email->getContact()->getId()], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('contact_show', ['contact'=> $email->getContact()->getId()], Response::HTTP_SEE_OTHER);
     }
 }

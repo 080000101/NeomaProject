@@ -111,3 +111,35 @@
 .logo-contact {
     display: none;
 }
+
+.choose-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+.select {
+    height: 8rem;
+    background-color: whitesmoke;
+    width: 30rem;
+    text-align: center;
+    font-size: 2.7rem;
+    border-radius: 100px;
+    color: $main-color;
+    margin-bottom: 1.5rem;
+}
+
+.tri-btn {
+    height: 8rem;
+    width: 12rem;
+    border-radius: 60px;
+    background-color: whitesmoke;
+    color: $main-color;
+    font-size: 2.5rem;
+}
+
+.empty-title {
+    font-size: 3rem;
+    color: $main-color;
+}

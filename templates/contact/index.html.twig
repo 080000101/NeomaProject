@@ -13,15 +13,19 @@
             {% if app.user %}<a class="deconnexion" href="{{ path('app_logout') }}"><img class="logout" src="{{ asset('build/images/logout.png') }}" alt="ACME logout"></a>{% endif %}
         </div>
 
-        <form action="/contact" method="GET">
-            <select name="category">
-                <option value="">Choisir une catégorie</option>
-                {% for Category in app.user.categories %}
-                    <option value="{{ Category.id }}">{{ Category.name }}</option>
-                {% endfor %}
-            </select>
-            <input type="submit" name="envoi">
-        </form>
+        <div>
+            <form class="choose-category" action="/contact" method="GET">
+                <select class="select" name="category">
+                    <option value="">Choisir une catégorie</option>
+                    {% for Category in app.user.categories %}
+                        <option value="{{ Category.id }}">{{ Category.name }}</option>
+                    {% endfor %}
+                </select>
+                <div>
+                    <input class="tri-btn" type="submit" name="envoi">
+                </div>
+            </form>
+        </div>
 
         <div class="infos-background">
 
@@ -39,7 +43,7 @@
                         </div>
                     </div>
                 {% else %}
-                    <h4 class="empty-title">Ajoutez de nouveaux contacts</h4>  
+                    <h4 class="empty-title">+ Ajoutez de nouveaux contacts</h4>  
                 {% endfor %}
             </div>
 

@@ -42,6 +42,8 @@ class ContactController extends AbstractController
         $contact = new Contact();
         $user = $this->getUser();
         $contact->setAccount($user);
+        /*$firstname = $this->setFirstname();
+        $firstname = ucfirst(strtolower($firstname));*/
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
 

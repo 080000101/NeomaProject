@@ -14,6 +14,9 @@
                     <img class="profile-picture" src="{{ asset('build/images/profil-icon-DM.png') }}" alt="ACME logo">
                 </div>
                 <h1 class="show-title">{{ contact.firstname }} {{ contact.lastname }}</h1>
+                {% if {{ contact.category.name }} == true %}
+                    <h4 class="show-category">{{ contact.category.name }}</h4>
+                {% endif %}
             </div>
 
             <div class="show-scroll">
@@ -65,10 +68,6 @@
                     <a href="{{ path('adress_new', {'id': contact.id}) }}" class="add-more">+ Ajoutez une adresse</h4></a>
                 </div>
 
-            </div>
-
-            <div>
-                <h4 class="libellé">Catégorie : {{ contact.category.name }}</h4>
             </div>
             
         </div>

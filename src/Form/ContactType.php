@@ -31,6 +31,8 @@ class ContactType extends AbstractType
             ],)
             ->add('category', ChoiceType::class, [
                 'choices' => $categories,
+                'attr' => ['class' => 'test',
+                        'placeholder' => 'Nom']
             ])
         ;
     }

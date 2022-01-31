@@ -28,7 +28,7 @@ class AdressController extends AbstractController
             $entityManager->persist($adress);
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact_show', ['id'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['contact'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('adress/new.html.twig', [
@@ -46,7 +46,7 @@ class AdressController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact_show', ['id'=> $adress->getContact()->getId()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['contact'=> $adress->getContact()->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('adress/edit.html.twig', [
@@ -63,6 +63,6 @@ class AdressController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('contact_show', ['id'=> $adress->getContact()->getId()], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('contact_show', ['contact'=> $adress->getContact()->getId()], Response::HTTP_SEE_OTHER);
     }
 }

@@ -28,7 +28,7 @@ class PhoneNumberController extends AbstractController
             $entityManager->persist($phoneNumber);
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact_show', ['id'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['contact'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('phone_number/new.html.twig', [
@@ -46,7 +46,7 @@ class PhoneNumberController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact_show', ['id'=> $phoneNumber->getContact()->getId()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['contact'=> $phoneNumber->getContact()->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('phone_number/edit.html.twig', [
@@ -63,6 +63,6 @@ class PhoneNumberController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('contact_show', ['id'=> $phoneNumber->getContact()->getId()], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('contact_show', ['contact'=> $phoneNumber->getContact()->getId()], Response::HTTP_SEE_OTHER);
     }
 }
