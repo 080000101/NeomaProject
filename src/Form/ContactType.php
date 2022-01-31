@@ -15,6 +15,11 @@ class ContactType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $categories = [];
+        foreach ($builder->getData()->getAccount()->getCategories() as $category) {
+            $categories[$category->getName()] = $category;
+        }
+        
         $builder
             ->add('firstname', TextType::class,
             ['attr' => ['class' => 'name-test',
@@ -24,10 +29,8 @@ class ContactType extends AbstractType
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Nom']
             ],)
-            ->add('category', null, [
-                'choice_label' => 'name',
-                'attr' => ['class' => 'test',
-                           'placeholder' => 'category']
+            ->add('category', ChoiceType::class, [
+                'choices' => $categories,
             ])
         ;
     }

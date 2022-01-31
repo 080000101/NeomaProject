@@ -24,9 +24,15 @@ class ContactController extends AbstractController
     {
         $user = $this->getUser();
 
+        if(isset($_GET['envoi'])){
+            $category = $categoryRepository->find($_GET['category']);
+            $contacts = $contactRepository->findByCategory($category);
+        } else {
+                $contacts = $contactRepository->findByAccount($user);
+            }
+
         return $this->render('contact/index.html.twig', [
-            'contacts' => $contactRepository->findByAccount($user),
-            'Categories' => $categoryRepository->findByAccount($user),
+            'contacts' => $contacts,
         ]);
     }
 
@@ -34,17 +40,13 @@ class ContactController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager, CategoryRepository $categoryRepository): Response
     {
         $contact = new Contact();
+        $user = $this->getUser();
+        $contact->setAccount($user);
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
-        $user = $this->getUser();
-
-        if(isset($_POST['envoi'])){ 
-            return $this;
-        }
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $contact->setAccount($user);
             $entityManager->persist($contact);
             $entityManager->flush();
 
