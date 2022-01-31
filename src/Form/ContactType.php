@@ -7,11 +7,19 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
+
 
 class ContactType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
+        $categories = [];
+        foreach ($builder->getData()->getAccount()->getCategories() as $category) {
+            $categories[$category->getName()] = $category;
+        }
+        
         $builder
             ->add('firstname', TextType::class,
             ['attr' => ['class' => 'name-test',
@@ -21,10 +29,11 @@ class ContactType extends AbstractType
             ['attr' => ['class' => 'test',
                         'placeholder' => 'Nom']
             ],)
-            ->add('category', TextType::class,
-            ['attr' => ['class' => 'test',
+            ->add('category', ChoiceType::class, [
+                'choices' => $categories,
+                'attr' => ['class' => 'test',
                         'placeholder' => 'Nom']
-            ],)
+            ])
         ;
     }
 

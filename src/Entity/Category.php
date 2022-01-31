@@ -23,7 +23,7 @@ class Category
     private $name;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Account::class)
+     * @ORM\ManyToOne(targetEntity=Account::class, inversedBy="categories")
      * @ORM\JoinColumn(nullable=false)
      */
     private $account;
@@ -45,12 +45,12 @@ class Category
         return $this;
     }
 
-    public function getAccount(): ?account
+    public function getAccount(): ?Account
     {
         return $this->account;
     }
 
-    public function setAccount(?account $account): self
+    public function setAccount(?Account $account): self
     {
         $this->account = $account;
 

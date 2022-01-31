@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Entity\Category;
 use App\Form\ContactType;
 use App\Repository\ContactRepository;
 use App\Repository\PhoneNumberRepository;
@@ -23,9 +24,15 @@ class ContactController extends AbstractController
     {
         $user = $this->getUser();
 
+        if(isset($_GET['envoi'])){
+            $category = $categoryRepository->find($_GET['category']);
+            $contacts = $contactRepository->findByCategory($category);
+        } else {
+                $contacts = $contactRepository->findByAccount($user);
+            }
+
         return $this->render('contact/index.html.twig', [
-            'contacts' => $contactRepository->findByAccount($user),
-            'Categories' => $categoryRepository->findByAccount($user),
+            'contacts' => $contacts,
         ]);
     }
 
@@ -33,17 +40,15 @@ class ContactController extends AbstractController
     public function new(Request $request, EntityManagerInterface $entityManager, CategoryRepository $categoryRepository): Response
     {
         $contact = new Contact();
+        $user = $this->getUser();
+        $contact->setAccount($user);
+        /*$firstname = $this->setFirstname();
+        $firstname = ucfirst(strtolower($firstname));*/
         $form = $this->createForm(ContactType::class, $contact);
         $form->handleRequest($request);
-        $user = $this->getUser();
-
-        if(isset($_POST['envoi'])){ 
-            return $this;
-        }
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $contact->setAccount($user);
             $entityManager->persist($contact);
             $entityManager->flush();
 
@@ -57,16 +62,15 @@ class ContactController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'contact_show', methods: ['GET'])]
-    public function show(int $id, Contact $contact, PhoneNumberRepository $PhoneNumberRepository, EmailRepository $emailRepository, AdressRepository $adressRepository, CategoryRepository $categoryRepository): Response
+    #[Route('/{contact}', name: 'contact_show', methods: ['GET'])]
+    public function show(Contact $contact, PhoneNumberRepository $PhoneNumberRepository, EmailRepository $emailRepository, AdressRepository $adressRepository, CategoryRepository $categoryRepository): Response
     {
-        
         return $this->render('contact/show.html.twig', [
             'contact' => $contact,
             'PhoneNumbers' => $PhoneNumberRepository->findByContact($contact),
             'Emails' => $emailRepository->findByContact($contact),
             'Adresses' => $adressRepository->findByContact($contact),
-            'Categories' => $categoryRepository->findAll(),
+            'categories' => $categoryRepository->findAll(),
         ]);
     }
 

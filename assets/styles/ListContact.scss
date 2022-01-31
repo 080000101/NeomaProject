@@ -111,3 +111,64 @@
 .logo-contact {
     display: none;
 }
+
+.choose-category {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+}
+
+.choose-category-top {
+    display: none;
+}
+
+.select {
+    height: 8rem;
+    background-color: whitesmoke;
+    width: 30rem;
+    text-align: center;
+    font-size: 2.7rem;
+    border-radius: 100px;
+    color: $main-color;
+    margin-bottom: 1.5rem;
+}
+
+.tri-btn {
+    height: 8rem;
+    width: 12rem;
+    border-radius: 60px;
+    background-color: whitesmoke;
+    color: $main-color;
+    font-size: 2.5rem;
+}
+
+.empty-title {
+    font-size: 3rem;
+    color: $main-color;
+}
+
+
+@media screen and (min-width: 1100px) {
+    .choose-category-top {
+        display: block;
+        display: flex;
+    }
+    .select {
+        height: 5rem;
+        width: 25rem;
+        font-size: 2rem;
+        margin-bottom: 0rem;
+    }
+    .tri-btn {
+        height: 5rem;
+        width: 7rem;
+        font-size: 1.5rem;
+    }
+    .choose-category {
+        display: none;
+    }
+    .list-title {
+        font-size: 4rem;
+    }
+}

@@ -15,12 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/phone/number')]
 class PhoneNumberController extends AbstractController
 {
-    #[Route('/', name: 'phone_number_index', methods: ['GET'])]
-    public function index(Request $request, PhoneNumberRepository $phoneNumberRepository): Response
-    {
-        return $this->redirectToRoute('contact_show', ['id'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
-    }
-
     #[Route('/new', name: 'phone_number_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, ContactRepository $contactRepository): Response
     {
@@ -34,20 +28,12 @@ class PhoneNumberController extends AbstractController
             $entityManager->persist($phoneNumber);
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact_show', ['id'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['contact'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('phone_number/new.html.twig', [
             'phone_number' => $phoneNumber,
             'form' => $form,
-        ]);
-    }
-
-    #[Route('/{id}', name: 'phone_number_show', methods: ['GET'])]
-    public function show(PhoneNumber $phoneNumber): Response
-    {
-        return $this->render('phone_number/show.html.twig', [
-            'phone_number' => $phoneNumber,
         ]);
     }
 
@@ -60,7 +46,7 @@ class PhoneNumberController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact_show', ['id'=> $phoneNumber->getContact()->getId()], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['contact'=> $phoneNumber->getContact()->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('phone_number/edit.html.twig', [
@@ -77,6 +63,6 @@ class PhoneNumberController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('contact_show', ['id'=> $phoneNumber->getContact()->getId()], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('contact_show', ['contact'=> $phoneNumber->getContact()->getId()], Response::HTTP_SEE_OTHER);
     }
 }

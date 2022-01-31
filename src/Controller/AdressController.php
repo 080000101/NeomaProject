@@ -15,14 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/adress')]
 class AdressController extends AbstractController
 {
-    #[Route('/', name: 'adress_index', methods: ['GET'])]
-    public function index(AdressRepository $adressRepository): Response
-    {
-        return $this->render('adress/index.html.twig', [
-            'adresses' => $adressRepository->findAll(),
-        ]);
-    }
-
     #[Route('/new', name: 'adress_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager, ContactRepository $contactRepository): Response
     {
@@ -36,20 +28,12 @@ class AdressController extends AbstractController
             $entityManager->persist($adress);
             $entityManager->flush();
 
-            return $this->redirectToRoute('contact_show', ['id'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['contact'=> $request->get("id") ], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('adress/new.html.twig', [
             'adress' => $adress,
             'form' => $form,
-        ]);
-    }
-
-    #[Route('/{id}', name: 'adress_show', methods: ['GET'])]
-    public function show(Adress $adress): Response
-    {
-        return $this->render('adress/show.html.twig', [
-            'adress' => $adress,
         ]);
     }
 
@@ -62,7 +46,7 @@ class AdressController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('adress_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('contact_show', ['contact'=> $adress->getContact()->getId()], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('adress/edit.html.twig', [
@@ -79,6 +63,6 @@ class AdressController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('adress_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('contact_show', ['contact'=> $adress->getContact()->getId()], Response::HTTP_SEE_OTHER);
     }
 }
