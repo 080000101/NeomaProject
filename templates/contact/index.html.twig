@@ -10,6 +10,17 @@
             {# <img class="logo-contact" src="{{ asset('build/images/E-contact.png') }}" alt="ACME logo"> #}
             <a href="{{ path('category_index') }}"><img class="category" src="{{ asset('build/images/category.png') }}" alt="ACME category"></a>
             <h1 class="list-title">Contacts</h1>
+            <form class="choose-category-top" action="/contact" method="GET">
+                <select class="select" name="category">
+                    <option value="">Choisir une catégorie</option>
+                    {% for Category in app.user.categories %}
+                        <option value="{{ Category.id }}">{{ Category.name }}</option>
+                    {% endfor %}
+                </select>
+                <div>
+                    <input class="tri-btn" type="submit" name="envoi">
+                </div>
+            </form>
             {% if app.user %}<a class="deconnexion" href="{{ path('app_logout') }}"><img class="logout" src="{{ asset('build/images/logout.png') }}" alt="ACME logout"></a>{% endif %}
         </div>
 

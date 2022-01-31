@@ -14,9 +14,7 @@
                     <img class="profile-picture" src="{{ asset('build/images/profil-icon-DM.png') }}" alt="ACME logo">
                 </div>
                 <h1 class="show-title">{{ contact.firstname }} {{ contact.lastname }}</h1>
-                {% if {{ contact.category.name }} == true %}
-                    <h4 class="show-category">{{ contact.category.name }}</h4>
-                {% endif %}
+                <h4 class="show-category">{{ contact.category.name }}</h4>
             </div>
 
             <div class="show-scroll">
