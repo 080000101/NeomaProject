@@ -45,7 +45,6 @@
                     <div class="infos">
                         {# <h4>{{ contact.id }}</h4> #}
                         <div class="h4"> 
-                            <input type="checkbox" class="checkbox" name="checkbox" value="{{ contact.id }}">
                             <img class="profil-icon" src="{{ asset('build/images/profil-icon.png') }}" alt="ACME profil icon">
                             <a class="name-link" href="{{ path('contact_show', { contact : contact.id}) }}"><h4 class="name">{{ contact.firstname }} {{ contact.lastname }}</h4></a>
                         </div>

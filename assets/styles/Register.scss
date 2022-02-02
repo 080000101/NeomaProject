@@ -67,6 +67,9 @@
     display: none;
 }
 
+.required {
+    display: none;
+}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Media Query PC~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -103,7 +106,7 @@
         height: 5rem;
         margin-bottom: 2.5rem;
         font-size: 1.5rem;
-        padding-left: 6.5rem;
+        padding-left: 4rem;
         border: 2px solid $main-color;
         color: $main-color;
     }
@@ -111,7 +114,7 @@
         height: 5rem;
         margin-bottom: 2.5rem;
         font-size: 1.5rem;
-        padding-left: 6.5rem;
+        padding-left: 4rem;
         border: 2px solid $main-color;
         color: $main-color;
     }
